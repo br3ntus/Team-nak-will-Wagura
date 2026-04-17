@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f2233;
+}
+
+.navbar {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #cfd8e3;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  background: #d4af37;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.nav-right a {
+  color: #cfd8e3;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-right a:hover {
+  color: #d4af37;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Card */
+.card {
+  display: flex;
+  background: #2c3f55;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Left Side */
+.left {
+  flex: 1;
+  padding: 40px;
+  background: #22384f;
+  color: #cfd8e3;
+}
+
+.left h5 {
+  color: #d4af37;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.left h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.left span {
+  color: #d4af37;
+}
+
+.left p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.left ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.left ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.left small {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Right Side */
+.right {
+  flex: 1;
+  padding: 40px;
+  color: #fff;
+}
+
+.right h2 {
+  margin-bottom: 5px;
+}
+
+.sub {
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #cfd8e3;
+}
+
+/* Form */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: none;
+  background: #3a4f66;
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #d4af37;
+  border: none;
+  border-radius: 6px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.login {
+  margin-top: 15px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.login a {
+  color: #d4af37;
+  text-decoration: none;
+}
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #cfd8e3;
+}
+
+.checkbox-row input {
+  width: auto;
+  margin: 0;
+}
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.features i {
+  color: #d4af37;
+}
