@@ -1,0 +1,49 @@
+/* WAGURA BRAND FOUNDATION */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg-main: #1a2535;
+  --bg-card: #2E4057;
+  --bg-panel: #243348;
+  
+  /* Accent */
+  --clr-accent: #C9A84C;
+  --clr-accent-hover: #b8923d;
+  
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #7f8ea0;
+  --text-muted: #556070;
+  --text-faint: #3d4f5e;
+  
+  /* Inputs & Borders */
+  --input-bg: #1f2d3d;
+  --input-border: #2a3d54;
+  --border-subtle: #253347;
+  --border-card: #1e2e3e;
+
+  /* Tag Colors */
+  --tag-ph: #97C459;
+  --tag-dogs: #85B7EB;
+  --tag-cats: #FAC775;
+  --tag-symptoms: #F09595;
+
+  /* Typography */
+  --ff-primary: 'DM Sans', sans-serif;
+}
+
+/* --- RESET --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
