@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wagura Login</title>
+    <link rel="stylesheet" href="css/login_page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav-left">
+        <img src="images/Wagura Logo 60x60.png" alt="Wagura Logo" />
+        <span class="logo-text">Wagura</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="landing_page.html">← Back to home</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <!-- LEFT SIDE (Darker Panel) -->
+        <div class="left">
+          <div class="subcontent-top">Welcome back</div>
+          <div class="header">
+            <h1>Your pets are waiting for <span>you</span></h1>
+          </div>
+          <div class="content">
+            <p>
+              Log in to track your pet's health, read local guides, and stay
+              updated with daily pet insights.
+            </p>
+          </div>
+
+          <ul class="features">
+            <li>
+              <div class="icon-box blue-bg"><i class="fa-solid fa-paw"></i></div>
+              <span>Enroll up to 5 pets with unique IDs</span>
+            </li>
+            <li>
+              <div class="icon-box white-bg"><i class="fa-solid fa-notes-medical"></i></div>
+              <span>Log health entries for each pet</span>
+            </li>
+            <li>
+              <div class="icon-box gold-bg"><i class="fa-solid fa-lightbulb"></i></div>
+              <span>Daily pet insights on every login</span>
+            </li>
+            <li>
+              <div class="icon-box red-bg"><i class="fa-solid fa-book-open"></i></div>
+              <span>Access PH-specific guides anytime</span>
+            </li>
+          </ul>
+
+          <div class="left-footer">Made for pet owners in Laguna, Philippines</div>
+        </div>
+
+        <!-- RIGHT SIDE (Lighter Panel) -->
+        <div class="right">
+          <h2>Log in to Wagura</h2>
+          <p class="sub">Enter your credentials to access your account</p>
+
+          <form>
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="Enter your email" />
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password" />
+
+            <div class="form-options">
+              <div class="checkbox-group">
+                <input type="checkbox" id="remember" />
+                <label for="remember" style="margin-bottom: 0">Remember me</label>
+              </div>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="submit">Log in</button>
+          </form>
+
+          <div class="divider">or</div>
+
+          <p class="signup-prompt">
+            Don't have an account? <a href="register_page.html">Sign up for free</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
