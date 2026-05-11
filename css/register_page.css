@@ -162,11 +162,18 @@ button {
   color: #1a2535;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.2s ease; /* Smooth feedback */
 }
 
 button:hover {
   background: #b8923d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .login {

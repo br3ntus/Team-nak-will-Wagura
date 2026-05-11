@@ -224,11 +224,18 @@ button {
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.2s ease; /* Smooth transition */
 }
 
 button:hover {
   background: #b8923d;
+  transform: translateY(-2px); /* Lift up */
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3); /* Glow */
+}
+
+button:active {
+  transform: translateY(0); /* Press down */
+  box-shadow: none;
 }
 
 .divider {
