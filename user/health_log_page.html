@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Pet Health Logs</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/health_log_page.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="../landing_page.html"><img src="../images/Wagura Logo 60x60.png" alt="Wagura" class="sidebar-logo"></a>
+        <ul class="sidebar-links">
+          <li><a href="dashboard_page.html"><i class="fa-solid fa-house"></i></a></li>
+          <li><a href="my_pet_page.html"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="articles_page.html"><i class="fa-solid fa-table-cells-large"></i></a></li>
+          <li><a href="daily_insights_page.html"><i class="fa-solid fa-star"></i></a></li>
+          <li><a href="health_log_page.html" class="active"><i class="fa-solid fa-clipboard-list"></i></a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <header class="page-header">
+          <div class="title-group">
+            <h1>Pet Health Logs</h1>
+            <p>All health entries across your pets</p>
+          </div>
+          <div class="user-profile">BA</div>
+        </header>
+
+        <!-- FILTER BAR -->
+        <div class="filter-row">
+          <div class="log-filters">
+            <button class="filter-btn active"><i class="fa-solid fa-list"></i> All logs</button>
+            <button class="filter-btn"><i class="fa-solid fa-bowl-food"></i> Feeding</button>
+            <button class="filter-btn"><i class="fa-solid fa-weight-scale"></i> Weight</button>
+            <button class="filter-btn"><i class="fa-solid fa-hospital"></i> Vet visit</button>
+            <button class="filter-btn"><i class="fa-solid fa-face-frown"></i> Symptoms</button>
+          </div>
+          <a href="add_log_page.html" class="add-log-btn">+ Add new log</a>
+        </div>
+
+        <div class="log-page-grid">
+          <!-- TIMELINE (LEFT) -->
+          <div class="timeline-section">
+            
+            <!-- TODAY -->
+            <div class="timeline-group">
+              <h2>TODAY — MARCH 20, 2026</h2>
+              <div class="log-items-list">
+                <div class="log-entry-card">
+                  <div class="log-icon-box"><i class="fa-solid fa-bowl-food" style="color: #F09595;"></i></div>
+                  <div class="log-info">
+                    <h3>Morning feeding</h3>
+                    <p>200g dry food + water refilled</p>
+                  </div>
+                  <div class="pet-tag-group">
+                    <span class="pet-name-label">Coco</span>
+                    <span class="log-type-label">Feeding</span>
+                    <span class="log-time-label">7:30 AM</span>
+                  </div>
+                </div>
+
+                <div class="log-entry-card">
+                  <div class="log-icon-box"><i class="fa-solid fa-weight-scale" style="color: #85B7EB;"></i></div>
+                  <div class="log-info">
+                    <h3>Weight check</h3>
+                    <p>3.2 kg recorded</p>
+                  </div>
+                  <div class="pet-tag-group">
+                    <span class="pet-name-label">Mochi</span>
+                    <span class="log-type-label">Weight</span>
+                    <span class="log-time-label">9:00 AM</span>
+                  </div>
+                </div>
+
+                <div class="log-entry-card">
+                  <div class="log-icon-box"><i class="fa-solid fa-bowl-food" style="color: #F09595;"></i></div>
+                  <div class="log-info">
+                    <h3>Afternoon feeding</h3>
+                    <p>150g wet food</p>
+                  </div>
+                  <div class="pet-tag-group">
+                    <span class="pet-name-label">Bruno</span>
+                    <span class="log-type-label">Feeding</span>
+                    <span class="log-time-label">12:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- YESTERDAY -->
+            <div class="timeline-group">
+              <h2>YESTERDAY — MARCH 19, 2026</h2>
+              <div class="log-items-list">
+                <div class="log-entry-card">
+                  <div class="log-icon-box"><i class="fa-solid fa-hospital" style="color: #FAC775;"></i></div>
+                  <div class="log-info">
+                    <h3>Annual checkup</h3>
+                    <p>Dr. Santos, Laguna Animal Clinic — all clear</p>
+                  </div>
+                  <div class="pet-tag-group">
+                    <span class="pet-name-label">Bruno</span>
+                    <span class="log-type-label">Vet visit</span>
+                    <span class="log-time-label">2:00 PM</span>
+                  </div>
+                </div>
+
+                <div class="log-entry-card">
+                  <div class="log-icon-box"><i class="fa-solid fa-face-frown" style="color: #F09595;"></i></div>
+                  <div class="log-info">
+                    <h3>Scratching observed</h3>
+                    <p>Scratching around neck area, possible ticks</p>
+                  </div>
+                  <div class="pet-tag-group">
+                    <span class="pet-name-label">Coco</span>
+                    <span class="log-type-label">Symptoms</span>
+                    <span class="log-time-label">6:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SIDEBAR STATS (RIGHT) -->
+          <div class="stats-sidebar">
+            <div class="summary-panel">
+              <h3>Log Summary</h3>
+              <div class="stat-row">
+                <span><span class="stat-dot" style="background: #97C459;"></span> Feeding</span>
+                <span class="stat-count">12</span>
+              </div>
+              <div class="stat-row">
+                <span><span class="stat-dot" style="background: #85B7EB;"></span> Weight</span>
+                <span class="stat-count">5</span>
+              </div>
+              <div class="stat-row">
+                <span><span class="stat-dot" style="background: #FAC775;"></span> Vet visits</span>
+                <span class="stat-count">3</span>
+              </div>
+              <div class="stat-row">
+                <span><span class="stat-dot" style="background: #F09595;"></span> Symptoms</span>
+                <span class="stat-count">2</span>
+              </div>
+            </div>
+
+            <div class="summary-panel">
+              <h3>Logs by Pet</h3>
+              <div class="pet-summary-item">
+                <i class="fa-solid fa-dog"></i>
+                <div>
+                  <h4>Coco</h4>
+                  <p>Last log: Today</p>
+                </div>
+                <span class="stat-count">9 logs</span>
+              </div>
+              <div class="pet-summary-item">
+                <i class="fa-solid fa-cat"></i>
+                <div>
+                  <h4>Mochi</h4>
+                  <p>Last log: Today</p>
+                </div>
+                <span class="stat-count">7 logs</span>
+              </div>
+              <div class="pet-summary-item">
+                <i class="fa-solid fa-dog"></i>
+                <div>
+                  <h4>Bruno</h4>
+                  <p>Last log: Yesterday</p>
+                </div>
+                <span class="stat-count">6 logs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

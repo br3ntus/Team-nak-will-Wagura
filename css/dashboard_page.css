@@ -12,50 +12,6 @@ a {
   min-height: 100vh;
 }
 
-/* --- SIDEBAR --- */
-.sidebar {
-  width: 70px;
-  background-color: var(--bg-panel);
-  border-right: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-}
-
-.sidebar-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  margin-bottom: 40px;
-  object-fit: contain;
-}
-
-.sidebar-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.sidebar-links a {
-  font-size: 20px;
-  color: var(--text-muted);
-  transition: color 0.2s;
-}
-
-.sidebar-links a.active, 
-.sidebar-links a:hover {
-  color: var(--clr-accent);
-}
-
-.sidebar-bottom {
-  margin-top: auto;
-}
-
 /* --- MAIN CONTENT AREA --- */
 .main-content {
   flex: 1;
@@ -411,6 +367,8 @@ a {
 }
 
 .log-action-btn {
+  display: block;
+  text-align: center;
   width: 100%;
   margin-top: 20px;
   background: transparent;

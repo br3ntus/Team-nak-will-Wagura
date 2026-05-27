@@ -1,0 +1,254 @@
+/* WAGURA HEALTH LOG SPECIFIC STYLES */
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+  flex: 1;
+  background-color: var(--bg-main);
+  padding: 2rem 2.5rem;
+}
+
+/* --- HEADER --- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.title-group h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.title-group p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.user-profile {
+  width: 35px;
+  height: 35px;
+  background: #3d4f5e;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* --- FILTER BAR --- */
+.filter-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.log-filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.filter-btn.active {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.filter-btn i { font-size: 12px; }
+
+.add-log-btn {
+  background: var(--clr-accent);
+  color: #1a2535;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+/* --- LOG GRID --- */
+.log-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 2.5rem;
+}
+
+/* Timeline */
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-group h2 {
+  font-size: 12px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.log-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.log-entry-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.log-entry-card:hover {
+  transform: translateX(5px);
+}
+
+.log-icon-box {
+  width: 42px;
+  height: 42px;
+  background: var(--bg-panel);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.log-info {
+  flex: 1;
+}
+
+.log-info h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.log-info p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.pet-tag-group {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.pet-name-label {
+  font-size: 11px;
+  background: #3d4f5e;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.log-type-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.log-time-label {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* --- SIDE PANELS --- */
+.stats-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.summary-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.summary-panel h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.stat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.stat-count {
+  color: #fff;
+  font-weight: 500;
+}
+
+.pet-summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.pet-summary-item i {
+  color: var(--clr-accent);
+  font-size: 14px;
+}
+
+.pet-summary-item div {
+  flex: 1;
+}
+
+.pet-summary-item h4 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pet-summary-item p {
+  font-size: 11px;
+  color: var(--text-faint);
+}
