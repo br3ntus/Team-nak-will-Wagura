@@ -170,7 +170,9 @@
   color: var(--clr-accent);
 }
 
-.type-option i { font-size: 16px; }
+.type-option i {
+  font-size: 16px;
+}
 
 /* Form Layout */
 .form-row {
@@ -195,8 +197,8 @@
   color: var(--tag-symptoms);
 }
 
-.form-group input, 
-.form-group select, 
+.form-group input,
+.form-group select,
 .form-group textarea {
   background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
@@ -233,7 +235,7 @@
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
-  outline: none; /* Kill black outline */
+  outline: none;
   transition: all 0.2s ease;
 }
 
@@ -324,7 +326,8 @@
     margin-top: 2rem;
   }
 
-  .save-btn, .cancel-btn {
+  .save-btn,
+  .cancel-btn {
     width: 100%;
   }
 

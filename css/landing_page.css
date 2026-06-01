@@ -336,8 +336,8 @@ header {
 /* --- ARTICLES SECTION --- */
 .articles-preview {
   padding: 6rem 1.5rem;
-  max-width: 100%; /* Full width for color background */
-  background: var(--bg-panel); /* Lighter color for this section */
+  max-width: 100%;
+  background: var(--bg-panel);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
 }
@@ -389,9 +389,18 @@ header {
   display: inline-block;
 }
 
-.tag.ph-guide { background: rgba(151, 196, 89, 0.1); color: var(--tag-ph); }
-.tag.dogs { background: rgba(133, 183, 235, 0.1); color: var(--tag-dogs); }
-.tag.cats { background: rgba(250, 199, 117, 0.1); color: var(--tag-cats); }
+.tag.ph-guide {
+  background: rgba(151, 196, 89, 0.1);
+  color: var(--tag-ph);
+}
+.tag.dogs {
+  background: rgba(133, 183, 235, 0.1);
+  color: var(--tag-dogs);
+}
+.tag.cats {
+  background: rgba(250, 199, 117, 0.1);
+  color: var(--tag-cats);
+}
 
 .article-card h3 {
   font-size: 18px;
@@ -478,7 +487,8 @@ footer {
     font-size: 2.5rem;
   }
 
-  .features-grid, .articles-grid {
+  .features-grid,
+  .articles-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -490,14 +500,15 @@ footer {
   }
 
   .nav-links {
-    display: none; /* Simple: hide links on phone for now */
+    display: none;
   }
 
   .nav-right-btns {
     gap: 0.8rem;
   }
 
-  .login-btn, .signup-btn {
+  .login-btn,
+  .signup-btn {
     padding: 0.5rem 1rem;
     font-size: 12px;
   }
@@ -515,26 +526,26 @@ footer {
   .hero-btns {
     justify-content: center;
     flex-direction: column;
-    align-items: center; /* Center buttons */
-    gap: 1rem;
+    align-items: center;
   }
 
-  .signup-btn, .secondary-btn {
+  .signup-btn,
+  .secondary-btn {
     width: 100%;
-    max-width: 320px; /* Limit width so they don't look massive */
+    max-width: 320px;
   }
 
   .right-hero-preview {
     width: 100%;
-    padding: 0 10px; /* Space around mockup */
+    padding: 0 10px;
   }
 
   .dashboard-mockup-card {
-    padding: 1.5rem 1rem; /* Shrink padding for more inner space */
+    padding: 1.5rem 1rem;
   }
 
   .mockup-pets-row {
-    gap: 0.5rem; /* Less gap so cards fit better */
+    gap: 0.5rem;
   }
 
   .pet-thumb {
@@ -546,7 +557,8 @@ footer {
     gap: 1.5rem;
   }
 
-  .features-grid, .articles-grid {
+  .features-grid,
+  .articles-grid {
     grid-template-columns: 1fr;
   }
 
@@ -567,11 +579,14 @@ footer {
 
 /* SMALL PHONE (480px) */
 @media (max-width: 480px) {
-  .hero-flex-container, .features-section, .articles-preview-container, footer {
+  .hero-flex-container,
+  .features-section,
+  .articles-preview-container,
+  footer {
     padding-left: 20px;
     padding-right: 20px;
   }
-  
+
   .header h1 {
     font-size: 2rem;
   }

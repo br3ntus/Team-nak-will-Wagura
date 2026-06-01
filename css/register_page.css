@@ -167,7 +167,7 @@ button {
   color: #1a2535;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease; /* Smooth feedback */
+  transition: all 0.2s ease;
 }
 
 button:hover {

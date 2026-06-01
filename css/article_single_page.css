@@ -132,14 +132,16 @@
   gap: 2rem;
 }
 
-.toc-panel, .related-panel {
+.toc-panel,
+.related-panel {
   background: var(--bg-panel);
   border: 1px solid var(--border-card);
   border-radius: 16px;
   padding: 1.5rem;
 }
 
-.toc-panel h3, .related-panel h3 {
+.toc-panel h3,
+.related-panel h3 {
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 1.5rem;
@@ -159,7 +161,9 @@
   gap: 10px;
 }
 
-.toc-link span { color: var(--text-muted); }
+.toc-link span {
+  color: var(--text-muted);
+}
 
 .related-list {
   display: flex;
@@ -205,7 +209,7 @@
   }
 
   .article-sidebar {
-    order: 2; /* Sidebar below content */
+    order: 2;
   }
 }
 

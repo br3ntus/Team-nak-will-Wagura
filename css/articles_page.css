@@ -151,10 +151,22 @@
   border-radius: 4px;
 }
 
-.tag.ph { background: rgba(151, 196, 89, 0.1); color: var(--tag-ph); }
-.tag.dogs { background: rgba(133, 183, 235, 0.1); color: var(--tag-dogs); }
-.tag.cats { background: rgba(250, 199, 117, 0.1); color: var(--tag-cats); }
-.tag.general { background: rgba(127, 142, 160, 0.1); color: var(--text-secondary); }
+.tag.ph {
+  background: rgba(151, 196, 89, 0.1);
+  color: var(--tag-ph);
+}
+.tag.dogs {
+  background: rgba(133, 183, 235, 0.1);
+  color: var(--tag-dogs);
+}
+.tag.cats {
+  background: rgba(250, 199, 117, 0.1);
+  color: var(--tag-cats);
+}
+.tag.general {
+  background: rgba(127, 142, 160, 0.1);
+  color: var(--text-secondary);
+}
 
 .article-body h3 {
   font-size: 16px;
@@ -203,7 +215,10 @@
     padding: 1.5rem 20px;
   }
 
-  .page-header, .toolbar, .filter-pill-row, .articles-grid {
+  .page-header,
+  .toolbar,
+  .filter-pill-row,
+  .articles-grid {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;

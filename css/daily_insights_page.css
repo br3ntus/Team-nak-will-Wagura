@@ -100,7 +100,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(to right, var(--bg-card), rgba(201, 168, 76, 0.05));
+  background-image: linear-gradient(
+    to right,
+    var(--bg-card),
+    rgba(201, 168, 76, 0.05)
+  );
   position: relative;
 }
 
@@ -190,9 +194,18 @@
   margin-bottom: 12px;
 }
 
-.insight-tag.ph { background: rgba(151, 196, 89, 0.1); color: var(--tag-ph); }
-.insight-tag.dogs { background: rgba(133, 183, 235, 0.1); color: var(--tag-dogs); }
-.insight-tag.cats { background: rgba(250, 199, 117, 0.1); color: var(--tag-cats); }
+.insight-tag.ph {
+  background: rgba(151, 196, 89, 0.1);
+  color: var(--tag-ph);
+}
+.insight-tag.dogs {
+  background: rgba(133, 183, 235, 0.1);
+  color: var(--tag-dogs);
+}
+.insight-tag.cats {
+  background: rgba(250, 199, 117, 0.1);
+  color: var(--tag-cats);
+}
 
 .insight-card h3 {
   font-size: 15px;

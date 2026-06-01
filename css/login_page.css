@@ -228,17 +228,17 @@ button {
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.2s ease; /* Smooth transition */
+  transition: all 0.2s ease;
 }
 
 button:hover {
   background: #b8923d;
-  transform: translateY(-2px); /* Lift up */
-  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3); /* Glow */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
 }
 
 button:active {
-  transform: translateY(0); /* Press down */
+  transform: translateY(0);
   box-shadow: none;
 }
 

@@ -1,22 +1,22 @@
 /* WAGURA BRAND FOUNDATION */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
 
 :root {
   /* Backgrounds */
   --bg-main: #1a2535;
-  --bg-card: #2E4057;
+  --bg-card: #2e4057;
   --bg-panel: #243348;
-  
+
   /* Accent */
-  --clr-accent: #C9A84C;
+  --clr-accent: #c9a84c;
   --clr-accent-hover: #b8923d;
-  
+
   /* Text */
   --text-primary: #ffffff;
   --text-secondary: #7f8ea0;
   --text-muted: #818ea0;
   --text-faint: #647383;
-  
+
   /* Inputs & Borders */
   --input-bg: #1f2d3d;
   --input-border: #2a3d54;
@@ -24,17 +24,19 @@
   --border-card: #1e2e3e;
 
   /* Tag Colors */
-  --tag-ph: #97C459;
-  --tag-dogs: #85B7EB;
-  --tag-cats: #FAC775;
-  --tag-symptoms: #F09595;
+  --tag-ph: #97c459;
+  --tag-dogs: #85b7eb;
+  --tag-cats: #fac775;
+  --tag-symptoms: #f09595;
 
   /* Typography */
-  --ff-primary: 'DM Sans', sans-serif;
+  --ff-primary: "DM Sans", sans-serif;
 }
 
 /* --- RESET --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -46,7 +48,7 @@ body {
   background-color: var(--bg-main);
   color: var(--text-primary);
   line-height: 1.5;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 a {
@@ -68,7 +70,7 @@ a:hover {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  align-items: stretch; /* Force children to stretch */
+  align-items: stretch;
 }
 
 /* --- SIDEBAR --- */
@@ -80,9 +82,7 @@ a:hover {
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 100;
   flex-shrink: 0;
 }
@@ -111,7 +111,7 @@ a:hover {
   justify-content: center;
 }
 
-.sidebar-links a.active, 
+.sidebar-links a.active,
 .sidebar-links a:hover {
   color: var(--clr-accent);
 }
@@ -132,7 +132,7 @@ a:hover {
 /* PHONE (768px) */
 @media (max-width: 768px) {
   body {
-    padding-bottom: 70px; /* Space for bottom nav */
+    padding-bottom: 70px;
   }
 
   .dashboard-wrapper {
@@ -154,7 +154,7 @@ a:hover {
   }
 
   .sidebar-logo {
-    display: none; /* Hide logo on mobile bar */
+    display: none;
   }
 
   .sidebar-links {
@@ -166,7 +166,7 @@ a:hover {
 
   .sidebar-bottom {
     margin-top: 0;
-    display: none; 
+    display: none;
   }
 }
 
@@ -175,7 +175,7 @@ a:hover {
   .sidebar {
     height: 60px;
   }
-  
+
   body {
     padding-bottom: 60px;
   }

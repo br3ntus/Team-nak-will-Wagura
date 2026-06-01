@@ -151,7 +151,8 @@
   color: var(--tag-symptoms);
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   background: var(--bg-panel);
   border: 1px solid var(--border-subtle);
   border-radius: 8px;
@@ -161,7 +162,8 @@
   outline: none;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   border-color: var(--clr-accent);
 }
 
@@ -249,7 +251,8 @@
     flex-direction: column;
   }
 
-  .save-btn, .cancel-btn {
+  .save-btn,
+  .cancel-btn {
     width: 100%;
   }
 }

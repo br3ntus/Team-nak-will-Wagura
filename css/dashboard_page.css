@@ -103,7 +103,11 @@ a {
   border: 1px solid var(--border-card);
   border-radius: 16px;
   padding: 2.5rem;
-  background-image: linear-gradient(to right, var(--bg-card), rgba(201, 168, 76, 0.05));
+  background-image: linear-gradient(
+    to right,
+    var(--bg-card),
+    rgba(201, 168, 76, 0.05)
+  );
 }
 
 .greeting-card h5 {
@@ -260,9 +264,18 @@ a {
   margin-bottom: 10px;
 }
 
-.article-tag.ph { background: rgba(151, 196, 89, 0.1); color: var(--tag-ph); }
-.article-tag.dogs { background: rgba(133, 183, 235, 0.1); color: var(--tag-dogs); }
-.article-tag.cats { background: rgba(250, 199, 117, 0.1); color: var(--tag-cats); }
+.article-tag.ph {
+  background: rgba(151, 196, 89, 0.1);
+  color: var(--tag-ph);
+}
+.article-tag.dogs {
+  background: rgba(133, 183, 235, 0.1);
+  color: var(--tag-dogs);
+}
+.article-tag.cats {
+  background: rgba(250, 199, 117, 0.1);
+  color: var(--tag-cats);
+}
 
 .article-meta {
   font-size: 11px;
@@ -420,8 +433,9 @@ a {
   .dashboard-grid {
     padding: 0 20px 20px;
   }
-  
-  .content-left, .content-right {
+
+  .content-left,
+  .content-right {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -460,6 +474,6 @@ a {
   }
 
   .pet-id {
-    display: none; /* Hide ID on very small screens to save space */
+    display: none;
   }
 }

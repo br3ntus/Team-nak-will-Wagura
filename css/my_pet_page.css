@@ -286,8 +286,14 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
-.action-btn.logs:hover { border-color: var(--clr-accent); color: var(--clr-accent); }
-.action-btn.delete:hover { border-color: var(--tag-symptoms); color: var(--tag-symptoms); }
+.action-btn.logs:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+.action-btn.delete:hover {
+  border-color: var(--tag-symptoms);
+  color: var(--tag-symptoms);
+}
 
 /* Empty Card */
 .empty-slot-card {
@@ -339,7 +345,10 @@
     padding: 1.5rem 20px;
   }
 
-  .page-header, .filter-bar, .slot-status-card, .pets-grid {
+  .page-header,
+  .filter-bar,
+  .slot-status-card,
+  .pets-grid {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
