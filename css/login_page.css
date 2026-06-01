@@ -11,6 +11,8 @@ body {
   background: #1a2535;
   color: #ffffff;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -20,6 +22,7 @@ body {
   justify-content: space-between;
   align-items: center;
   color: #7f8ea0;
+  flex-shrink: 0;
 }
 
 .nav-left {
@@ -51,9 +54,10 @@ body {
 
 .container {
   display: flex;
+  flex: 1;
   justify-content: center;
-  margin-top: 60px;
-  padding-bottom: 80px;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 /* Card */
@@ -272,4 +276,53 @@ button:active {
   color: #c9a84c;
   text-decoration: none;
   font-weight: 500;
+}
+
+/* --- RESPONSIVE --- */
+
+/* TABLET (992px) */
+@media (max-width: 992px) {
+  .card {
+    width: 90%;
+  }
+}
+
+/* PHONE (768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .container {
+    margin-top: 20px;
+    padding: 0 15px 40px;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left {
+    padding: 30px 20px;
+  }
+
+  .right {
+    padding: 30px 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+}
+
+/* SMALL PHONE (480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px 40px;
+  }
+
+  .right h2 {
+    font-size: 20px;
+  }
 }

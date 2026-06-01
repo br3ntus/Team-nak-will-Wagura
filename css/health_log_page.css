@@ -252,3 +252,74 @@
   font-size: 11px;
   color: var(--text-faint);
 }
+
+/* --- RESPONSIVE --- */
+
+/* TABLET (992px) */
+@media (max-width: 992px) {
+  .log-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PHONE (768px) */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 20px;
+  }
+
+  .page-header, .filter-row, .log-page-grid {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .log-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .filter-btn {
+    white-space: nowrap; /* Keep pills on one line for scrolling */
+  }
+
+  .log-entry-card {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .pet-tag-group {
+    display: none; 
+  }
+}
+
+/* SMALL PHONE (480px) */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .log-entry-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .log-icon-box {
+    margin-bottom: 0.5rem;
+  }
+}

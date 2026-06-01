@@ -197,3 +197,59 @@
   border: none;
   cursor: pointer;
 }
+
+/* --- RESPONSIVE --- */
+
+/* TABLET (992px) */
+@media (max-width: 992px) {
+  .log-form-container {
+    max-width: 100%;
+  }
+}
+
+/* PHONE (768px) */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .log-form-container {
+    padding: 1.5rem;
+  }
+
+  .pet-selector {
+    flex-wrap: wrap;
+  }
+
+  .type-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* SMALL PHONE (480px) */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .log-form-container {
+    padding: 1rem;
+  }
+
+  .type-btn {
+    padding: 1rem 5px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+  }
+
+  .save-btn, .cancel-btn {
+    width: 100%;
+  }
+}

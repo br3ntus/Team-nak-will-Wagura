@@ -195,3 +195,54 @@
   font-size: 11px;
   color: var(--text-faint);
 }
+
+/* --- RESPONSIVE --- */
+
+/* TABLET (992px) */
+@media (max-width: 992px) {
+  .article-reader-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sidebar {
+    order: 2; /* Sidebar below content */
+  }
+}
+
+/* PHONE (768px) */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem;
+  }
+
+  .article-hero-img {
+    height: 180px;
+  }
+
+  .article-content-body {
+    padding: 1.5rem;
+  }
+
+  .article-content-body h1 {
+    font-size: 24px;
+  }
+
+  .article-text {
+    font-size: 14px;
+  }
+}
+
+/* SMALL PHONE (480px) */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .article-hero-img {
+    height: 150px;
+  }
+
+  .article-content-body {
+    padding: 1rem;
+  }
+}
