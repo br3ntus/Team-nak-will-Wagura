@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Wagura Login</title>
+    <link rel="stylesheet" href="template.css" />
     <link rel="stylesheet" href="css/login_page.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="js/login_page.js" defer></script>
   </head>
   <body>
+    <!-- Navigation bar at the top -->
     <div class="navbar">
       <div class="nav-left">
         <img src="images/Wagura Logo 60x60.png" alt="Wagura Logo" />
@@ -22,7 +25,7 @@
 
     <div class="container">
       <div class="card">
-        <!-- LEFT SIDE (Darker Panel) -->
+        <!-- The left side explains why people should use the app -->
         <div class="left">
           <div class="subcontent-top">Welcome back</div>
           <div class="header">
@@ -37,56 +40,80 @@
 
           <ul class="features">
             <li>
-              <div class="icon-box blue-bg"><i class="fa-solid fa-paw"></i></div>
+              <div class="icon-box blue-bg">
+                <i class="fa-solid fa-paw"></i>
+              </div>
               <span>Enroll up to 5 pets with unique IDs</span>
             </li>
             <li>
-              <div class="icon-box white-bg"><i class="fa-solid fa-notes-medical"></i></div>
+              <div class="icon-box white-bg">
+                <i class="fa-solid fa-notes-medical"></i>
+              </div>
               <span>Log health entries for each pet</span>
             </li>
             <li>
-              <div class="icon-box gold-bg"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="icon-box gold-bg">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
               <span>Daily pet insights on every login</span>
             </li>
             <li>
-              <div class="icon-box red-bg"><i class="fa-solid fa-book-open"></i></div>
+              <div class="icon-box red-bg">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
               <span>Access PH-specific guides anytime</span>
             </li>
           </ul>
 
-          <div class="left-footer">Made for pet owners in Laguna, Philippines</div>
+          <div class="left-footer">
+            Made for pet owners in Laguna, Philippines
+          </div>
         </div>
 
-        <!-- RIGHT SIDE (Lighter Panel) -->
+        <!-- The right side is where the actual login happens -->
         <div class="right">
           <h2>Log in to Wagura</h2>
           <p class="sub">Enter your credentials to access your account</p>
 
-          <form>
-            <label for="email">Email address</label>
-            <input type="email" id="email" placeholder="Enter your email" />
+          <form id="login-form" action="login.php" method="POST">
+            <label for="username">Username or Email</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username or email"
+              required />
 
             <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your password" />
+            <!-- We use a container here to keep the eye icon inside the input box -->
+            <div class="password-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required />
+              <i class="fa-solid fa-eye toggle-password" id="toggleLoginPassword"></i>
+            </div>
 
             <div class="form-options">
               <div class="checkbox-group">
-                <input type="checkbox" id="remember" />
-                <label for="remember" style="margin-bottom: 0">Remember me</label>
+                <input type="checkbox" id="remember" name="remember" />
+                <label for="remember" style="margin-bottom: 0"
+                  >Remember me</label
+                >
               </div>
               <a href="#" class="forgot-link">Forgot password?</a>
             </div>
 
-            <button type="submit">Log in</button>
+            <button type="submit" id="submit-btn">Log in</button>
           </form>
 
           <div class="divider">or</div>
 
           <p class="signup-prompt">
-            Don't have an account? <a href="register_page.html">Sign up for free</a>
+            Don't have an account?
+            <a href="register_page.html">Sign up for free</a>
           </p>
         </div>
       </div>

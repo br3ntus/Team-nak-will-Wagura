@@ -13,6 +13,7 @@ a {
 }
 
 /* --- MAIN CONTENT AREA --- */
+/* This is the main content box where everything but the sidebar lives */
 .main-content {
   flex: 1;
   display: flex;
@@ -44,6 +45,7 @@ a {
   flex-wrap: wrap;
 }
 
+/* This is the search bar at the top of the page */
 .search-box {
   background: var(--bg-panel);
   border: 1px solid var(--border-subtle);

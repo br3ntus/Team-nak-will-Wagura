@@ -7,6 +7,7 @@
   font-family: "DM Sans", Arial, sans-serif;
 }
 
+/* This is the main layout for the signup page */
 body {
   background: #1a2535;
   color: #ffffff;
@@ -60,7 +61,7 @@ body {
   padding: 40px 20px;
 }
 
-/* Card */
+/* This is the big box that holds the signup form and the welcome text */
 .card {
   display: flex;
   width: 900px;
