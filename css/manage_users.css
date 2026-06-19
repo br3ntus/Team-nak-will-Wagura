@@ -1,0 +1,108 @@
+/* Custom toolbar and table styling for Manage Users */
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8ea0;
+  font-size: 13px;
+}
+
+.search-wrapper input {
+  padding: 10px 16px 10px 38px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  width: 240px;
+  transition: border-color 0.2s;
+}
+
+.search-wrapper input:focus {
+  border-color: var(--clr-accent);
+}
+
+.filter-select {
+  padding: 10px 16px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #7f8ea0;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--clr-accent);
+}
+
+.toolbar-right {
+  font-size: 13px;
+  color: #7f8ea0;
+}
+
+.toolbar-right span {
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+/* Progress bar alignment */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-track {
+  width: 60px;
+  height: 6px;
+  background-color: #3d4f5e;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--clr-accent);
+  border-radius: 3px;
+}
+
+/* Action button variations */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-table.danger {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.3);
+  color: #f09595;
+}
+
+.btn-table.danger:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ffb3b3;
+}

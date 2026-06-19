@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Manage Pets</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/manage_pets.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html" class="active"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title">
+            <h1>Manage Pets</h1>
+            <p>View and manage all enrolled pets across accounts</p>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Pets Table card container -->
+        <section class="admin-card">
+          <!-- Toolbar search filters -->
+          <div class="admin-toolbar">
+            <div class="toolbar-left">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search pets..." />
+              </div>
+              <select class="filter-select">
+                <option value="all">All types</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+              <select class="filter-select">
+                <option value="all">All breeds</option>
+                <option value="aspin">Aspin</option>
+                <option value="persian">Persian</option>
+                <option value="shih-tzu">Shih Tzu</option>
+                <option value="puspin">Puspin</option>
+              </select>
+            </div>
+            <div class="toolbar-right"><span>67</span> pets total</div>
+          </div>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Pet</th>
+                <th>Type</th>
+                <th>Breed</th>
+                <th>Age</th>
+                <th>Weight</th>
+                <th>Owner</th>
+                <th>Health Logs</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="mini-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Coco</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">WG-DOG-001</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dog">Dog</span></td>
+                <td>Aspin</td>
+                <td>2 yrs</td>
+                <td>8.5 kg</td>
+                <td>
+                  <div class="owner-cell">
+                    <div class="owner-avatar gold">BA</div>
+                    <span>Brent A.</span>
+                  </div>
+                </td>
+                <td>22 logs</td>
+                <td><span class="status-pill healthy">Healthy</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_pet.html" class="btn-table">View</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="mini-icon-box"><i class="fa-solid fa-cat"></i></div>
+                    <div>
+                      <strong>Mochi</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">WG-CAT-001</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill cat">Cat</span></td>
+                <td>Persian</td>
+                <td>3 yrs</td>
+                <td>3.2 kg</td>
+                <td>
+                  <div class="owner-cell">
+                    <div class="owner-avatar gold">BA</div>
+                    <span>Brent A.</span>
+                  </div>
+                </td>
+                <td>15 logs</td>
+                <td><span class="status-pill healthy">Healthy</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_pet.html" class="btn-table">View</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="mini-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Bruno</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">WG-DOG-002</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dog">Dog</span></td>
+                <td>Shih Tzu</td>
+                <td>1 yr</td>
+                <td>5.1 kg</td>
+                <td>
+                  <div class="owner-cell">
+                    <div class="owner-avatar gold">BA</div>
+                    <span>Brent A.</span>
+                  </div>
+                </td>
+                <td>9 logs</td>
+                <td><span class="status-pill healthy">Healthy</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_pet.html" class="btn-table">View</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="mini-icon-box"><i class="fa-solid fa-cat"></i></div>
+                    <div>
+                      <strong>Niko</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">WG-CAT-002</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill cat">Cat</span></td>
+                <td>Puspin</td>
+                <td>2 yrs</td>
+                <td>2.8 kg</td>
+                <td>
+                  <div class="owner-cell">
+                    <div class="owner-avatar blue">JD</div>
+                    <span>Juan D.</span>
+                  </div>
+                </td>
+                <td>4 logs</td>
+                <td><span class="status-pill healthy">Healthy</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_pet.html" class="btn-table">View</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="mini-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Rex</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">WG-DOG-003</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dog">Dog</span></td>
+                <td>Aspin</td>
+                <td>4 yrs</td>
+                <td>12.0 kg</td>
+                <td>
+                  <div class="owner-cell">
+                    <div class="owner-avatar green">ML</div>
+                    <span>Maria L.</span>
+                  </div>
+                </td>
+                <td>31 logs</td>
+                <td><span class="status-pill healthy">Healthy</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_pet.html" class="btn-table">View</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

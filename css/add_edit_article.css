@@ -1,0 +1,90 @@
+/* CSS for Article creation and editing split screen layout */
+
+.split-form-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.left-form-panel {
+  flex: 1;
+}
+
+.right-widgets-panel {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Custom dashed upload block */
+.dashed-upload-box {
+  border: 1px dashed #3d4f5e;
+  background-color: rgba(31, 45, 61, 0.2);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+  color: #7f8ea0;
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+
+.dashed-upload-box:hover {
+  border-color: var(--clr-accent);
+  background-color: rgba(31, 45, 61, 0.4);
+}
+
+.dashed-upload-box i {
+  font-size: 24px;
+  color: #7f8ea0;
+}
+
+/* Category pills in widgets */
+.pills-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.status-pill.ph-guide { background-color: #1a2e1a; color: #97c459; }
+.status-pill.dogs { background-color: #1a2535; color: #85b7eb; }
+.status-pill.cats { background-color: #2e1f10; color: #fac775; }
+.status-pill.general { background-color: rgba(201, 168, 76, 0.1); color: #c9a84c; }
+
+/* Large content textareas */
+.textarea-field {
+  min-height: 240px;
+  resize: vertical;
+}
+
+/* Right widget cards */
+.widget-card {
+  padding: 16px;
+}
+
+.widget-card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .split-form-layout {
+    flex-direction: column;
+  }
+  .right-widgets-panel {
+    width: 100%;
+  }
+}

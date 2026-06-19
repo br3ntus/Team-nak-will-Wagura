@@ -1,0 +1,124 @@
+/* Dashboard-specific layouts and stats card stylings */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Specific icon background colors matching design */
+.stat-card.users .stat-icon-wrapper {
+  background-color: rgba(133, 183, 235, 0.15);
+  color: #85b7eb;
+}
+.stat-card.pets .stat-icon-wrapper {
+  background-color: rgba(151, 196, 89, 0.15);
+  color: #97c459;
+}
+.stat-card.articles .stat-icon-wrapper {
+  background-color: rgba(250, 199, 117, 0.15);
+  color: #fac775;
+}
+.stat-card.insights .stat-icon-wrapper {
+  background-color: rgba(201, 168, 76, 0.15);
+  color: #c9a84c;
+}
+.stat-card.logs .stat-icon-wrapper {
+  background-color: rgba(240, 149, 149, 0.15);
+  color: #f09595;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #7f8ea0;
+  font-size: 12px;
+}
+
+.stat-trend {
+  font-size: 11px;
+  color: #97c459;
+  font-weight: 500;
+}
+
+/* Two-column layout */
+.dashboard-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.dashboard-split .admin-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header-row h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-header-row .manage-link {
+  color: var(--clr-accent);
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.card-header-row .manage-link:hover {
+  color: var(--clr-accent-hover);
+}
+
+/* User avatar helper in dashboard */
+.avatar-circle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Color palettes for avatars */
+.avatar-circle.gold { background-color: rgba(201, 168, 76, 0.15); color: #c9a84c; }
+.avatar-circle.blue { background-color: rgba(133, 183, 235, 0.15); color: #85b7eb; }
+.avatar-circle.green { background-color: rgba(151, 196, 89, 0.15); color: #97c459; }
+.avatar-circle.orange { background-color: rgba(250, 199, 117, 0.15); color: #fac775; }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .dashboard-split {
+    grid-template-columns: 1fr;
+  }
+}

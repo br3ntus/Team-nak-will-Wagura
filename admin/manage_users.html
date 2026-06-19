@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Manage Users</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/manage_users.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html" class="active"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title">
+            <h1>Manage Users</h1>
+            <p>View and manage all registered accounts</p>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Users Table container -->
+        <section class="admin-card">
+          <!-- Toolbar filters -->
+          <div class="admin-toolbar">
+            <div class="toolbar-left">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search users..." />
+              </div>
+              <select class="filter-select">
+                <option value="all">All users</option>
+                <option value="active">Active</option>
+                <option value="new">New</option>
+              </select>
+            </div>
+            <div class="toolbar-right"><span>24</span> users total</div>
+          </div>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Status</th>
+                <th>Pets Enrolled</th>
+                <th>Health Logs</th>
+                <th>Joined</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="avatar-circle gold">BA</div>
+                    <div>
+                      <strong>Brent Aldhee</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">brent@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <div class="progress-container">
+                    <span>3/5</span>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>22 logs</td>
+                <td>Mar 1, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_user.html" class="btn-table">View</a>
+                    <a href="edit_user.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="avatar-circle blue">JD</div>
+                    <div>
+                      <strong>Juan dela Cruz</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">juan@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill new">New</span></td>
+                <td>
+                  <div class="progress-container">
+                    <span>1/5</span>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width: 20%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>4 logs</td>
+                <td>Mar 18, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_user.html" class="btn-table">View</a>
+                    <a href="edit_user.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="avatar-circle green">ML</div>
+                    <div>
+                      <strong>Maria Lim</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">maria@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <div class="progress-container">
+                    <span>5/5</span>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>38 logs</td>
+                <td>Feb 14, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_user.html" class="btn-table">View</a>
+                    <a href="edit_user.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="avatar-circle orange">RC</div>
+                    <div>
+                      <strong>Rico Cruz</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">rico@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill new">New</span></td>
+                <td>
+                  <div class="progress-container">
+                    <span>2/5</span>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width: 40%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>9 logs</td>
+                <td>Mar 19, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_user.html" class="btn-table">View</a>
+                    <a href="edit_user.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="avatar-circle gold">AS</div>
+                    <div>
+                      <strong>Ana Santos</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">ana@email.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <div class="progress-container">
+                    <span>4/5</span>
+                    <div class="progress-track">
+                      <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                  </div>
+                </td>
+                <td>31 logs</td>
+                <td>Jan 28, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="edit_user.html" class="btn-table">View</a>
+                    <a href="edit_user.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

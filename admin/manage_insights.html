@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Manage Daily Insights</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/manage_insights.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html" class="active"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title">
+            <h1>Manage Daily Insights</h1>
+            <p>Create, update, and delete daily pet insights</p>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Insights Table card container -->
+        <section class="admin-card">
+          <!-- Toolbar search filters -->
+          <div class="admin-toolbar">
+            <div class="toolbar-left">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search insights..." />
+              </div>
+              <select class="filter-select">
+                <option value="all">All categories</option>
+                <option value="ph-guide">PH Guide</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+                <option value="general">General</option>
+              </select>
+            </div>
+            <div class="toolbar-right">
+              <span style="margin-right: 16px"><span>23</span> insights total</span>
+              <a href="add_edit_insight.html" class="btn-toolbar-action">
+                <i class="fa-solid fa-plus"></i> New Insight
+              </a>
+            </div>
+          </div>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Insight</th>
+                <th>Category</th>
+                <th>Date Posted</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-cat"></i></div>
+                    <div>
+                      <strong>Did you know? Cats sleep 12 to 16 hours a day to conserve energy f...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill cats">Cats</span></td>
+                <td>Mar 20, 2026</td>
+                <td><span class="status-pill today"><i class="fa-solid fa-star"></i> Today</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Aspins need extra deworming every 3 months due to outdoor exposu...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dogs">Dogs</span></td>
+                <td>Mar 19, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-leaf"></i></div>
+                    <div>
+                      <strong>High humidity in Laguna can cause skin issues in pets. Check your p...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill ph-guide">PH Guide</span></td>
+                <td>Mar 18, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-cat"></i></div>
+                    <div>
+                      <strong>Cats need fresh water changed every day. They have a low thirst driv...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill cats">Cats</span></td>
+                <td>Mar 17, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-syringe"></i></div>
+                    <div>
+                      <strong>Rabies vaccination is required by law in the Philippines under Republ...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill ph-guide">PH Guide</span></td>
+                <td>Mar 16, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Shih Tzus need daily grooming to prevent matting and skin issues in ...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dogs">Dogs</span></td>
+                <td>Mar 15, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="insight-icon-box"><i class="fa-solid fa-paw"></i></div>
+                    <div>
+                      <strong>Regular vet checkups should happen at least once a year for all pets ...</strong>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill general">General</span></td>
+                <td>Mar 14, 2026</td>
+                <td><span class="status-text-published">Published</span></td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_insight.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

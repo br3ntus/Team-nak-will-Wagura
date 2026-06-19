@@ -1,0 +1,177 @@
+/* These are the common styles used across all admin pages to keep the look consistent */
+
+/* Layout wrapper to make sure content doesn't hide under the fixed sidebar */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 70px; /* This matches our sidebar width */
+  padding: 40px;
+  background-color: #1a2535;
+}
+
+/* Header at the top of every internal page */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.header-title h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.header-title p {
+  color: #7f8ea0;
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.admin-badge {
+  background: #2e4057;
+  border: 1px solid #3d4f5e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-badge i {
+  color: #85b7eb;
+  font-size: 10px;
+}
+
+.admin-profile-circle {
+  width: 36px;
+  height: 36px;
+  background: #3d4f5e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Common Card Containers */
+.admin-card {
+  background: #2e4057;
+  border: 1px solid #1e2e3e;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Common Table Styles */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #556070;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #253347;
+  letter-spacing: 0.5px;
+}
+
+.admin-table td {
+  padding: 14px 0;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(37, 51, 71, 0.5);
+  vertical-align: middle;
+}
+
+/* User/Pet cells in tables with icons/avatars */
+.entity-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-icon-box {
+  width: 32px;
+  height: 32px;
+  background: #3d4f5e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* Status Pills */
+.status-pill {
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.status-pill.active { background: rgba(151, 196, 89, 0.1); color: #97c459; }
+.status-pill.new { background: rgba(133, 183, 235, 0.1); color: #85b7eb; }
+.status-pill.healthy { background: rgba(151, 196, 89, 0.1); color: #97c459; }
+
+/* Action buttons like 'View' or 'Edit' in tables */
+.btn-table {
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #3d4f5e;
+  border-radius: 6px;
+  color: #7f8ea0;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-table:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Responsive fix for phones */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    bottom: 0;
+    top: auto;
+    padding: 0 20px;
+    justify-content: space-around;
+  }
+
+  .admin-sidebar .brand-box {
+    display: none;
+  }
+
+  .admin-sidebar .nav-links {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    margin-bottom: 60px;
+    padding: 20px;
+  }
+}

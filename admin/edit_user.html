@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Edit User</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/edit_user.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html" class="active"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title-container">
+            <a href="manage_users.html" class="back-link">&larr; Back to Users</a>
+            <div class="header-title">
+              <h1>Edit User</h1>
+              <p>Update user account details</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Edit Profile wrapper -->
+        <div class="edit-user-layout">
+          <!-- Sidebar profile summary -->
+          <section class="admin-card profile-sidebar">
+            <div class="profile-avatar-large">BA</div>
+            <h2 class="profile-name">Brent Aldhee</h2>
+            <div class="profile-email">brent@email.com</div>
+            <span class="status-pill active">Active</span>
+
+            <ul class="profile-stats-list">
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Pets enrolled</span>
+                <span class="profile-stat-value">3 / 5</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Health logs</span>
+                <span class="profile-stat-value">22</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Joined</span>
+                <span class="profile-stat-value">Mar 1, 2026</span>
+              </li>
+            </ul>
+
+            <div class="danger-zone">
+              <div class="danger-title">DANGER ZONE</div>
+              <button class="btn-danger-outline">
+                <i class="fa-solid fa-trash-can"></i> Delete Account
+              </button>
+            </div>
+          </section>
+
+          <!-- Main edit fields form -->
+          <section class="admin-card form-card">
+            <form action="update_user_logic.php" method="POST">
+              <!-- Account info section -->
+              <div class="form-section">
+                <div class="form-section-title">Account Information</div>
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label for="first_name">First name</label>
+                    <input
+                      type="text"
+                      id="first_name"
+                      name="first_name"
+                      value="Brent Aldhee"
+                      required />
+                  </div>
+                  <div class="form-field">
+                    <label for="last_name">Last name</label>
+                    <input
+                      type="text"
+                      id="last_name"
+                      name="last_name"
+                      value="Villafranca"
+                      required />
+                  </div>
+                  <div class="form-field full-width">
+                    <label for="email">Email address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value="brent@email.com"
+                      required />
+                  </div>
+                  <div class="form-field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" value="brentaldhee" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="status">Account status</label>
+                    <select id="status" name="status">
+                      <option value="active" selected>Active</option>
+                      <option value="new">New</option>
+                      <option value="suspended">Suspended</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Section -->
+              <div class="form-section">
+                <div class="form-section-title">Security</div>
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label for="password">New password</label>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Leave blank to keep current" />
+                    <span class="form-field-helper">Only fill this if you need to reset the password.</span>
+                  </div>
+                  <div class="form-field">
+                    <label for="confirm_password">Confirm new password</label>
+                    <input
+                      type="password"
+                      id="confirm_password"
+                      name="confirm_password"
+                      placeholder="Leave blank to keep current" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Account limits -->
+              <div class="form-section">
+                <div class="form-section-title">Account Limits</div>
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label for="max_pets">Max pets allowed</label>
+                    <input type="text" id="max_pets" name="max_pets" value="5 pets (default)" />
+                    <span class="form-field-helper">Default limit is 5 per user.</span>
+                  </div>
+                  <div class="form-field">
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="user_id" name="user_id" value="USR-0001" disabled />
+                    <span class="form-field-helper">Auto-generated. Cannot be changed.</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form actions footer -->
+              <div class="form-actions">
+                <a href="manage_users.html" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Save changes</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

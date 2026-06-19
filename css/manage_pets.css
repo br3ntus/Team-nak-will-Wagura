@@ -1,0 +1,120 @@
+/* Styles for Manage Pets list */
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8ea0;
+  font-size: 13px;
+}
+
+.search-wrapper input {
+  padding: 10px 16px 10px 38px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  width: 240px;
+  transition: border-color 0.2s;
+}
+
+.search-wrapper input:focus {
+  border-color: var(--clr-accent);
+}
+
+.filter-select {
+  padding: 10px 16px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #7f8ea0;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--clr-accent);
+}
+
+.toolbar-right {
+  font-size: 13px;
+  color: #7f8ea0;
+}
+
+.toolbar-right span {
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+/* Owner avatar in tables */
+.owner-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.owner-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.owner-avatar.gold { background-color: rgba(201, 168, 76, 0.15); color: #c9a84c; }
+.owner-avatar.blue { background-color: rgba(133, 183, 235, 0.15); color: #85b7eb; }
+.owner-avatar.green { background-color: rgba(151, 196, 89, 0.15); color: #97c459; }
+
+/* Custom type tags */
+.status-pill.dog {
+  background-color: rgba(133, 183, 235, 0.15);
+  color: #85b7eb;
+}
+
+.status-pill.cat {
+  background-color: rgba(250, 199, 117, 0.15);
+  color: #fac775;
+}
+
+/* Action button alignment */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-table.danger {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.3);
+  color: #f09595;
+}
+
+.btn-table.danger:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ffb3b3;
+}

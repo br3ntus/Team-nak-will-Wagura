@@ -1,0 +1,158 @@
+/* Custom styles for Manage Daily Insights list */
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8ea0;
+  font-size: 13px;
+}
+
+.search-wrapper input {
+  padding: 10px 16px 10px 38px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  outline: none;
+  width: 240px;
+  transition: border-color 0.2s;
+}
+
+.search-wrapper input:focus {
+  border-color: var(--clr-accent);
+}
+
+.filter-select {
+  padding: 10px 16px;
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  color: #7f8ea0;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--clr-accent);
+}
+
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: #7f8ea0;
+}
+
+.toolbar-right span {
+  color: var(--clr-accent);
+  font-weight: 500;
+}
+
+/* Add insight button in toolbar */
+.btn-toolbar-action {
+  padding: 10px 20px;
+  background-color: var(--clr-accent);
+  color: #1a2535;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-toolbar-action:hover {
+  background-color: var(--clr-accent-hover);
+}
+
+/* Category pill styles matching color-reference.md */
+.status-pill.ph-guide {
+  background-color: #1a2e1a;
+  color: #97c459;
+}
+
+.status-pill.dogs {
+  background-color: #1a2535;
+  color: #85b7eb;
+}
+
+.status-pill.cats {
+  background-color: #2e1f10;
+  color: #fac775;
+}
+
+.status-pill.general {
+  background-color: rgba(201, 168, 76, 0.1);
+  color: #c9a84c;
+}
+
+/* Today gold/yellow status badge */
+.status-pill.today {
+  background-color: rgba(201, 168, 76, 0.15);
+  color: var(--clr-accent);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.status-text-published {
+  color: #7f8ea0;
+  font-size: 13px;
+}
+
+/* Insight icon wrapper */
+.insight-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #7f8ea0;
+  flex-shrink: 0;
+}
+
+/* Action button rows */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-table.danger {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: rgba(231, 76, 60, 0.3);
+  color: #f09595;
+}
+
+.btn-table.danger:hover {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #ffb3b3;
+}

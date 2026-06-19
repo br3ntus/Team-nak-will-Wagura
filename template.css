@@ -197,3 +197,67 @@ a:hover {
 .toggle-password:hover {
   color: #c9a84c;
 }
+
+/* --- ADMIN SPECIFIC SIDEBAR --- */
+.admin-sidebar {
+  width: 70px;
+  background-color: #243348;
+  border-right: 1px solid #253347;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.admin-sidebar .brand-box {
+  background-color: var(--clr-accent);
+  color: #1a2535;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 40px;
+  text-decoration: none;
+}
+
+.admin-sidebar .nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.admin-sidebar .nav-links li a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8ea0;
+  font-size: 18px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.admin-sidebar .nav-links li a:hover,
+.admin-sidebar .nav-links li a.active {
+  background-color: rgba(201, 168, 76, 0.1);
+  color: var(--clr-accent);
+}
+
+.admin-sidebar .sidebar-bottom {
+  margin-top: auto;
+}
+
+.admin-sidebar .sidebar-bottom a {
+  color: #7f8ea0;
+  font-size: 18px;
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Add New Article</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/add_edit_article.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html" class="active"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title-container">
+            <a href="manage_articles.html" class="back-link">&larr; Back to Articles</a>
+            <div class="header-title">
+              <h1>Add New Article</h1>
+              <p>Create a new article or guide for Wagura</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Edit Profile wrapper -->
+        <div class="split-form-layout">
+          <!-- Left side form contents -->
+          <section class="admin-card left-form-panel">
+            <form action="post_article_logic.php" method="POST">
+              <!-- Article Details section -->
+              <div class="form-section">
+                <div class="form-section-title">Article Details</div>
+                <div class="form-field">
+                  <label for="title">Title *</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Enter article title..."
+                    required />
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label for="category">Category *</label>
+                    <select id="category" name="category" required>
+                      <option value="" disabled selected>Select category</option>
+                      <option value="ph-guide">PH Guide</option>
+                      <option value="dogs">Dogs</option>
+                      <option value="cats">Cats</option>
+                      <option value="general">General</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="breed">Breed</label>
+                    <input type="text" id="breed" name="breed" placeholder="e.g. Aspin, All breeds" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content section -->
+              <div class="form-section">
+                <div class="form-section-title">Content</div>
+                <div class="form-field">
+                  <label for="content">Article content *</label>
+                  <textarea
+                    id="content"
+                    name="content"
+                    class="textarea-field"
+                    placeholder="Write the full article content here. You can include tips, step-by-step guides, and PH-specific advice for pet owners in Laguna..."
+                    required></textarea>
+                  <span class="form-field-helper">Write clear and helpful content for Laguna pet owners.</span>
+                </div>
+              </div>
+
+              <!-- Form actions -->
+              <div class="form-actions">
+                <a href="manage_articles.html" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Publish article</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right side status control widgets -->
+          <div class="right-widgets-panel">
+            <!-- Thumbnail widget -->
+            <section class="admin-card widget-card">
+              <div class="widget-card-title">Thumbnail</div>
+              <div class="dashed-upload-box">
+                <i class="fa-regular fa-image"></i>
+                <span>Choose an emoji icon</span>
+              </div>
+              <div class="form-field" style="margin-bottom: 0">
+                <label for="icon_emoji">Icon emoji</label>
+                <input type="text" id="icon_emoji" placeholder="e.g. 🐶 or 💊" />
+              </div>
+            </section>
+
+            <!-- Publishing control -->
+            <section class="admin-card widget-card">
+              <div class="widget-card-title">Publishing</div>
+              <div class="form-field">
+                <label for="read_time">Read time</label>
+                <input type="text" id="read_time" placeholder="3 min read" />
+              </div>
+              <div class="form-field" style="margin-bottom: 0">
+                <label for="status">Status</label>
+                <select id="status">
+                  <option value="published" selected>Published</option>
+                  <option value="draft">Draft</option>
+                </select>
+              </div>
+            </section>
+
+            <!-- Category Preview colors list -->
+            <section class="admin-card widget-card">
+              <div class="widget-card-title">Category Preview</div>
+              <div class="pills-preview-container">
+                <span class="status-pill ph-guide">PH Guide</span>
+                <span class="status-pill dogs">Dogs</span>
+                <span class="status-pill cats">Cats</span>
+                <span class="status-pill general">General</span>
+              </div>
+              <span class="form-field-helper">Select one category above</span>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

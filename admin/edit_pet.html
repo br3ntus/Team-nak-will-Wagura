@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Pet Details</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/edit_pet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html" class="active"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title-container">
+            <a href="manage_pets.html" class="back-link">&larr; Back to Manage Pets</a>
+            <div class="header-title">
+              <h1>Pet Details</h1>
+              <p>Viewing pet profile and health logs</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Edit Profile wrapper -->
+        <div class="edit-pet-layout">
+          <!-- Sidebar profile summary -->
+          <section class="admin-card profile-sidebar">
+            <div class="pet-avatar-large-wrapper">
+              <i class="fa-solid fa-dog"></i>
+            </div>
+            <h2 class="profile-name">Coco</h2>
+            <div class="profile-sidebar-breed">Aspin</div>
+            <div class="pet-sidebar-id">WG-DOG-0001</div>
+
+            <div class="badge-row">
+              <span class="status-pill dog">Dog</span>
+              <span class="status-pill healthy">Healthy</span>
+            </div>
+
+            <ul class="profile-stats-list">
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Age</span>
+                <span class="profile-stat-value">2 years</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Weight</span>
+                <span class="profile-stat-value">8.5 kg</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Sex</span>
+                <span class="profile-stat-value">Male</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Color</span>
+                <span class="profile-stat-value">Brown</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Health logs</span>
+                <span class="profile-stat-value">22</span>
+              </li>
+              <li class="profile-stat-item">
+                <span class="profile-stat-label">Enrolled</span>
+                <span class="profile-stat-value">Mar 1, 2026</span>
+              </li>
+            </ul>
+
+            <!-- Nested owner card -->
+            <div class="owner-sidebar-box">
+              <div class="owner-title">Owner</div>
+              <div class="owner-name">Brent Aldhee</div>
+              <div class="owner-email">brent@email.com</div>
+            </div>
+
+            <!-- Danger Zone -->
+            <div class="danger-zone">
+              <button class="btn-danger-outline">
+                <i class="fa-solid fa-trash-can"></i> Remove Pet
+              </button>
+            </div>
+          </section>
+
+          <!-- Main pet stats form/card lists -->
+          <div style="flex: 1; display: flex; flex-direction: column">
+            <!-- Details card -->
+            <section class="admin-card">
+              <div class="form-section-title" style="margin-bottom: 20px">Pet Information</div>
+              <div class="info-card-content">
+                <div class="info-item">
+                  <span class="info-label">Full Name</span>
+                  <span class="info-value">Coco</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Breed</span>
+                  <span class="info-value">Aspin</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Type</span>
+                  <span class="info-value">Dog</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Age</span>
+                  <span class="info-value">2 years</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Weight</span>
+                  <span class="info-value">8.5 kg</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Sex</span>
+                  <span class="info-value">Male</span>
+                </div>
+                <div class="info-item full-width">
+                  <span class="info-label">Medical Notes</span>
+                  <span class="info-value"
+                    >Vaccinated in March 2025. No known allergies. Regular deworming every 3
+                    months.</span
+                  >
+                </div>
+              </div>
+            </section>
+
+            <!-- Logs card -->
+            <section class="admin-card logs-card">
+              <div class="card-header-row">
+                <h2 style="font-size: 14px; font-weight: 600; text-transform: uppercase">
+                  Recent Health Logs
+                </h2>
+                <a href="#" class="manage-link">View all 22 logs</a>
+              </div>
+
+              <div class="logs-list">
+                <!-- Log item 1 -->
+                <div class="log-item-row feeding">
+                  <div class="log-icon-box"><i class="fa-solid fa-bowl-food"></i></div>
+                  <div class="log-details">
+                    <div class="log-title">Morning feeding</div>
+                    <div class="log-desc">200g dry food + water refilled</div>
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-tag feeding">Feeding</span>
+                    <span class="log-time">Today</span>
+                  </div>
+                </div>
+
+                <!-- Log item 2 -->
+                <div class="log-item-row weight">
+                  <div class="log-icon-box"><i class="fa-solid fa-weight-scale"></i></div>
+                  <div class="log-details">
+                    <div class="log-title">Weight check</div>
+                    <div class="log-desc">8.5 kg recorded</div>
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-tag weight">Weight</span>
+                    <span class="log-time">Mar 18</span>
+                  </div>
+                </div>
+
+                <!-- Log item 3 -->
+                <div class="log-item-row vet">
+                  <div class="log-icon-box"><i class="fa-solid fa-hospital"></i></div>
+                  <div class="log-details">
+                    <div class="log-title">Annual checkup</div>
+                    <div class="log-desc">Dr. Santos - all clear</div>
+                  </div>
+                  <div class="log-meta">
+                    <span class="log-tag vet">Vet visit</span>
+                    <span class="log-time">Mar 10</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

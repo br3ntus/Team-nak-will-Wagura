@@ -1,0 +1,103 @@
+/* CSS for Add/Edit Daily Insights composer form */
+
+.insight-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Category Grid Selector */
+.category-btn-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.category-btn {
+  background-color: #1f2d3d;
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #7f8ea0;
+  transition: all 0.2s;
+  text-align: center;
+  font-size: 12px;
+}
+
+.category-btn i,
+.category-btn span.emoji-icon {
+  font-size: 24px;
+}
+
+.category-btn:hover {
+  border-color: #556070;
+  color: #ffffff;
+}
+
+.category-btn.active {
+  border-color: var(--clr-accent);
+  background-color: rgba(201, 168, 76, 0.05);
+  color: #ffffff;
+}
+
+/* Input layout */
+.insight-text-area {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Live Preview box */
+.preview-section {
+  margin-top: 32px;
+}
+
+.preview-section-title {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #7f8ea0;
+  margin-bottom: 12px;
+}
+
+.insight-preview-box {
+  background-color: rgba(31, 45, 61, 0.4);
+  border: 1px solid #2a3d54;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.preview-tag-title {
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.preview-placeholder-text {
+  font-size: 13px;
+  color: #556070;
+  font-style: italic;
+}
+
+/* Actions footer */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .category-btn-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

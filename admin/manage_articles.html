@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Manage Articles</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/manage_articles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html" class="active"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title">
+            <h1>Manage Articles</h1>
+            <p>Create, update, and delete articles and guides</p>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Articles Table card container -->
+        <section class="admin-card">
+          <!-- Toolbar search filters -->
+          <div class="admin-toolbar">
+            <div class="toolbar-left">
+              <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search articles..." />
+              </div>
+              <select class="filter-select">
+                <option value="all">All categories</option>
+                <option value="ph-guide">PH Guide</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+                <option value="general">General</option>
+              </select>
+            </div>
+            <div class="toolbar-right">
+              <span style="margin-right: 16px"><span>12</span> articles total</span>
+              <a href="add_edit_article.html" class="btn-toolbar-action">
+                <i class="fa-solid fa-plus"></i> New Article
+              </a>
+            </div>
+          </div>
+
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Article</th>
+                <th>Category</th>
+                <th>Breed</th>
+                <th>Read Time</th>
+                <th>Date Posted</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-dog"></i></div>
+                    <div>
+                      <strong>Protecting your dog from ticks in humid Laguna weather</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        Learn how to check for ticks and prevent infestations during r...
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill ph-guide">PH Guide</span></td>
+                <td>All breeds</td>
+                <td>3 min</td>
+                <td>Mar 10, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-syringe"></i></div>
+                    <div>
+                      <strong>Rabies prevention tips for Aspin owners near strays</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        Essential vaccination schedule and safety tips for dogs near ...
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dogs">Dogs</span></td>
+                <td>Aspin</td>
+                <td>4 min</td>
+                <td>Mar 8, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-thermometer"></i></div>
+                    <div>
+                      <strong>Keeping your cat cool during hot season in Laguna</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        Tips for managing heat stress and keeping your cat hydrated.
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill cats">Cats</span></td>
+                <td>All breeds</td>
+                <td>2 min</td>
+                <td>Mar 5, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-paw"></i></div>
+                    <div>
+                      <strong>What to do when your pet encounters a stray animal</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        Step by step guide on handling stray encounters safely.
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill general">General</span></td>
+                <td>All breeds</td>
+                <td>5 min</td>
+                <td>Mar 3, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-tooth"></i></div>
+                    <div>
+                      <strong>Dental care tips for small dog breeds in the Philippines</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        How to maintain healthy teeth for small breeds prone to dent...
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill dogs">Dogs</span></td>
+                <td>Shih Tzu</td>
+                <td>3 min</td>
+                <td>Feb 28, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="entity-cell">
+                    <div class="article-icon-box"><i class="fa-solid fa-pills"></i></div>
+                    <div>
+                      <strong>Deworming schedule for pets in tropical climates</strong>
+                      <div style="color: #7f8ea0; font-size: 11px">
+                        Why pets in the Philippines need more frequent deworming.
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="status-pill ph-guide">PH Guide</span></td>
+                <td>All breeds</td>
+                <td>4 min</td>
+                <td>Feb 25, 2026</td>
+                <td>
+                  <div class="actions-cell">
+                    <a href="add_edit_article.html" class="btn-table">Edit</a>
+                    <button class="btn-table danger">Delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

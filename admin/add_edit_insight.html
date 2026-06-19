@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | Add New Insight</title>
+    <!-- Brand CSS and icons -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/admin_shared.css" />
+    <link rel="stylesheet" href="../css/add_edit_insight.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar Navigation -->
+      <aside class="admin-sidebar">
+        <a href="admin_dashboard.html" class="brand-box">W</a>
+        <ul class="nav-links">
+          <li>
+            <a href="admin_dashboard.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
+          </li>
+          <li>
+            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+          </li>
+          <li>
+            <a href="manage_insights.html" class="active"><i class="fa-solid fa-star"></i></a>
+          </li>
+        </ul>
+        <div class="sidebar-bottom">
+          <a href="admin_login_page.html"><i class="fa-solid fa-gear"></i></a>
+        </div>
+      </aside>
+
+      <!-- Main administrative display -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-title-container">
+            <a href="manage_insights.html" class="back-link">&larr; Back to Insights</a>
+            <div class="header-title">
+              <h1>Add New Insight</h1>
+              <p>Post a daily pet insight for all users</p>
+            </div>
+          </div>
+          <div class="header-actions">
+            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-profile-circle">AD</div>
+          </div>
+        </header>
+
+        <!-- Edit Profile wrapper -->
+        <div class="insight-form-container">
+          <section class="admin-card">
+            <form action="post_insight_logic.php" method="POST">
+              <!-- Insight Details -->
+              <div class="form-section">
+                <div class="form-section-title">Insight Details</div>
+
+                <!-- Category select buttons grid -->
+                <div class="form-field">
+                  <label>Category *</label>
+                  <div class="category-btn-group">
+                    <button type="button" class="category-btn active">
+                      <span class="emoji-icon">🐶</span>
+                      <span>Dogs</span>
+                    </button>
+                    <button type="button" class="category-btn">
+                      <span class="emoji-icon">🐱</span>
+                      <span>Cats</span>
+                    </button>
+                    <button type="button" class="category-btn">
+                      <span class="emoji-icon">🌿</span>
+                      <span>General</span>
+                    </button>
+                    <button type="button" class="category-btn">
+                      <span class="emoji-icon">🇵🇭</span>
+                      <span>PH Guide</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-field">
+                    <label for="icon_emoji">Icon emoji *</label>
+                    <input type="text" id="icon_emoji" placeholder="e.g. 🐶 or 💊" required />
+                    <span class="form-field-helper">This shows as the insight icon.</span>
+                  </div>
+                  <div class="form-field">
+                    <label for="date_posted">Date to post *</label>
+                    <input type="text" id="date_posted" value="March 21, 2026" required />
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="insight_text">Insight text *</label>
+                  <textarea
+                    id="insight_text"
+                    name="insight_text"
+                    class="insight-text-area"
+                    placeholder="Write a short did-you-know fact or helpful tip for pet owners in Laguna. Keep it brief and easy to read..."
+                    required></textarea>
+                  <span class="form-field-helper">Keep it under 2 sentences. Short and easy to read.</span>
+                </div>
+              </div>
+
+              <!-- Live preview section -->
+              <div class="preview-section">
+                <div class="preview-section-title">Preview</div>
+                <div class="insight-preview-box">
+                  <div class="preview-tag-title">How it looks to users</div>
+                  <div class="preview-placeholder-text">
+                    Write your insight above to see a preview here.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="form-actions">
+                <a href="manage_insights.html" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Post insight</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
