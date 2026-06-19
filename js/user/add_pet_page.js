@@ -44,7 +44,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // ─────────────────────────────────────────────────────────────────────────
   const getSelectedType = () =>
     document.querySelector(".type-option.active")?.textContent?.trim() || "Dog";
+  const hasPetSpace = () =>
+    UserData.getPets().length < UserData.getProfile().petCapacity;
 
+  const updateSaveBtn = () => {
+    if (!saveBtn) return;
+    if (!hasPetSpace()) {
+      saveBtn.disabled = true;
+      saveBtn.textContent = "Max pets reached";
+    }
+  };
+
+  updateSaveBtn();
   // ─────────────────────────────────────────────────────────────────────────
   // CANCEL BUTTON: Return to My Pets page without saving
   // ─────────────────────────────────────────────────────────────────────────
@@ -81,10 +92,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    if (!hasPetSpace()) {
+      alert("You can only add up to 5 pets.");
+      return;
+    }
+
     // ───────────────────────────────────────────────────────────────────────
     // Step 3: Add pet to UserData (which auto-saves to localStorage)
     // ───────────────────────────────────────────────────────────────────────
-    UserData.addPet(petData);
+    const addedPet = UserData.addPet(petData);
+    if (!addedPet) {
+      alert("You can only add up to 5 pets.");
+      return;
+    }
+
     alert("Pet saved successfully. Redirecting to My Pets.");
     window.location.href = "my_pet_page.html";
   });

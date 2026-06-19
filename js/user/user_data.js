@@ -233,6 +233,14 @@
       return this.clone(this.mock.profile);
     },
 
+    getPetCapacity() {
+      return this.mock.profile.petCapacity || 5;
+    },
+
+    canAddPet() {
+      return this.getPets().length < this.getPetCapacity();
+    },
+
     getPets() {
       return this.clone(this.mock.pets);
     },
@@ -255,6 +263,11 @@
 
     addPet(petData) {
       const mock = this.mock;
+      const capacity = mock.profile.petCapacity || 5;
+      if (mock.pets.length >= capacity) {
+        return null;
+      }
+
       const nextNumber = mock.pets.length + 1;
       const prefix =
         petData.type && petData.type.toLowerCase() === "cat"
