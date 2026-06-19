@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wagura | My Pets</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../template.css" />
+    <link rel="stylesheet" href="../css/my_pet_page.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- This wrapper keeps the sidebar and the main content lined up correctly -->
+    <div class="dashboard-wrapper">
+      <!-- The sidebar on the left lets you jump between different parts of the app -->
+      <aside class="sidebar">
+        <a href="../landing_page.html"
+          ><img
+            src="../images/Wagura Logo 60x60.png"
+            alt="Wagura"
+            class="sidebar-logo"
+        /></a>
+        <ul class="sidebar-links">
+          <li>
+            <a href="dashboard_page.html"><i class="fa-solid fa-house"></i></a>
+          </li>
+          <li>
+            <a href="my_pet_page.html" class="active"
+              ><i class="fa-solid fa-user"></i
+            ></a>
+          </li>
+          <li>
+            <a href="articles_page.html"
+              ><i class="fa-solid fa-table-cells-large"></i
+            ></a>
+          </li>
+          <li>
+            <a href="daily_insights_page.html"
+              ><i class="fa-solid fa-star"></i
+            ></a>
+          </li>
+          <li>
+            <a href="health_log_page.html"
+              ><i class="fa-solid fa-clipboard-list"></i
+            ></a>
+          </li>
+          <li>
+            <a
+              href="../register_page.html"
+              class="temp-register-link"
+              title="Back to register"
+              ><i class="fa-solid fa-user-plus"></i
+            ></a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- This is the main section where you manage your pets -->
+      <main class="main-content">
+        <header class="page-header">
+          <div class="title-group">
+            <h1>My Pets</h1>
+            <p>Manage your enrolled pets</p>
+          </div>
+          <div class="user-profile">BA</div>
+        </header>
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar">
+          <div class="filters-left">
+            <div class="search-input-wrapper">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" placeholder="Search pets..." />
+            </div>
+            <select class="filter-select">
+              <option>All breeds</option>
+            </select>
+            <select class="filter-select">
+              <option>All types</option>
+            </select>
+          </div>
+          <a href="add_pet_page.html" class="enroll-btn">+ Enroll new pet</a>
+        </div>
+
+        <!-- SLOT STATUS -->
+        <div class="slot-status-card">
+          <div class="slot-text">
+            Pet slots: <strong>3 of 5</strong> used. You can enroll
+            <strong>2 more pets</strong>.
+          </div>
+          <div class="slot-dots">
+            <div class="dot active"></div>
+            <div class="dot active"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+
+        <!-- PETS GRID -->
+        <div class="pet-count-label">3 pets enrolled</div>
+        <div class="pets-grid">
+          <!-- PET 1 -->
+          <div class="pet-card">
+            <div class="pet-top-info">
+              <div class="pet-thumb"><i class="fa-solid fa-dog"></i></div>
+              <div class="pet-meta">
+                <h3>Coco</h3>
+                <p>Aspin • Dog</p>
+                <small>ID: WG-DOG-0001</small>
+              </div>
+              <span class="status-badge">Healthy</span>
+            </div>
+            <div class="pet-stats">
+              <div class="stat-box">
+                <span class="stat-label">AGE</span>
+                <span class="stat-val">2 yrs</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">WEIGHT</span>
+                <span class="stat-val">8.5 kg</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">LAST LOG</span>
+                <span class="stat-val">Today</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <a href="#" class="action-btn logs"
+                ><i class="fa-solid fa-eye"></i> View logs</a
+              >
+              <a href="add_pet_page.html" class="action-btn"
+                ><i class="fa-solid fa-pen"></i> Edit</a
+              >
+              <a href="#" class="action-btn delete"
+                ><i class="fa-solid fa-trash"></i> Delete</a
+              >
+            </div>
+          </div>
+
+          <!-- PET 2 -->
+          <div class="pet-card">
+            <div class="pet-top-info">
+              <div class="pet-thumb"><i class="fa-solid fa-cat"></i></div>
+              <div class="pet-meta">
+                <h3>Mochi</h3>
+                <p>Persian • Cat</p>
+                <small>ID: WG-CAT-0001</small>
+              </div>
+              <span class="status-badge">Healthy</span>
+            </div>
+            <div class="pet-stats">
+              <div class="stat-box">
+                <span class="stat-label">AGE</span>
+                <span class="stat-val">3 yrs</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">WEIGHT</span>
+                <span class="stat-val">3.2 kg</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">LAST LOG</span>
+                <span class="stat-val">Yesterday</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <a href="#" class="action-btn logs"
+                ><i class="fa-solid fa-eye"></i> View logs</a
+              >
+              <a href="add_pet_page.html" class="action-btn"
+                ><i class="fa-solid fa-pen"></i> Edit</a
+              >
+              <a href="#" class="action-btn delete"
+                ><i class="fa-solid fa-trash"></i> Delete</a
+              >
+            </div>
+          </div>
+
+          <!-- PET 3 -->
+          <div class="pet-card">
+            <div class="pet-top-info">
+              <div class="pet-thumb"><i class="fa-solid fa-dog"></i></div>
+              <div class="pet-meta">
+                <h3>Bruno</h3>
+                <p>Shih Tzu • Dog</p>
+                <small>ID: WG-DOG-0002</small>
+              </div>
+              <span class="status-badge">Healthy</span>
+            </div>
+            <div class="pet-stats">
+              <div class="stat-box">
+                <span class="stat-label">AGE</span>
+                <span class="stat-val">1 yr</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">WEIGHT</span>
+                <span class="stat-val">5.1 kg</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">LAST LOG</span>
+                <span class="stat-val">Mar 10</span>
+              </div>
+            </div>
+            <div class="card-actions">
+              <a href="#" class="action-btn logs"
+                ><i class="fa-solid fa-eye"></i> View logs</a
+              >
+              <a href="add_pet_page.html" class="action-btn"
+                ><i class="fa-solid fa-pen"></i> Edit</a
+              >
+              <a href="#" class="action-btn delete"
+                ><i class="fa-solid fa-trash"></i> Delete</a
+              >
+            </div>
+          </div>
+
+          <!-- EMPTY SLOT -->
+          <a href="add_pet_page.html" class="empty-slot-card">
+            <i class="fa-solid fa-plus"></i>
+            <span>Enroll a new pet</span>
+            <p>2 slots remaining</p>
+          </a>
+        </div>
+      </main>
+    </div>
+    <script src="../js/user/user_data.js"></script>
+    <script src="../js/user/common.js"></script>
+    <script src="../js/user/my_pet_page.js"></script>
+  </body>
+</html>

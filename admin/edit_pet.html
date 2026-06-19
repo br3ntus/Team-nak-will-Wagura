@@ -25,10 +25,14 @@
             <a href="manage_users.html"><i class="fa-solid fa-users"></i></a>
           </li>
           <li>
-            <a href="manage_pets.html" class="active"><i class="fa-solid fa-paw"></i></a>
+            <a href="manage_pets.html" class="active"
+              ><i class="fa-solid fa-paw"></i
+            ></a>
           </li>
           <li>
-            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="manage_articles.html"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
           </li>
           <li>
             <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
@@ -43,14 +47,18 @@
       <main class="admin-main">
         <header class="admin-header">
           <div class="header-title-container">
-            <a href="manage_pets.html" class="back-link">&larr; Back to Manage Pets</a>
+            <a href="manage_pets.html" class="back-link"
+              >&larr; Back to Manage Pets</a
+            >
             <div class="header-title">
               <h1>Pet Details</h1>
               <p>Viewing pet profile and health logs</p>
             </div>
           </div>
           <div class="header-actions">
-            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-badge">
+              <i class="fa-solid fa-shield-halved"></i> Admin
+            </div>
             <div class="admin-profile-circle">AD</div>
           </div>
         </header>
@@ -117,7 +125,9 @@
           <div style="flex: 1; display: flex; flex-direction: column">
             <!-- Details card -->
             <section class="admin-card">
-              <div class="form-section-title" style="margin-bottom: 20px">Pet Information</div>
+              <div class="form-section-title" style="margin-bottom: 20px">
+                Pet Information
+              </div>
               <div class="info-card-content">
                 <div class="info-item">
                   <span class="info-label">Full Name</span>
@@ -146,8 +156,8 @@
                 <div class="info-item full-width">
                   <span class="info-label">Medical Notes</span>
                   <span class="info-value"
-                    >Vaccinated in March 2025. No known allergies. Regular deworming every 3
-                    months.</span
+                    >Vaccinated in March 2025. No known allergies. Regular
+                    deworming every 3 months.</span
                   >
                 </div>
               </div>
@@ -156,7 +166,12 @@
             <!-- Logs card -->
             <section class="admin-card logs-card">
               <div class="card-header-row">
-                <h2 style="font-size: 14px; font-weight: 600; text-transform: uppercase">
+                <h2
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                  ">
                   Recent Health Logs
                 </h2>
                 <a href="#" class="manage-link">View all 22 logs</a>
@@ -165,7 +180,9 @@
               <div class="logs-list">
                 <!-- Log item 1 -->
                 <div class="log-item-row feeding">
-                  <div class="log-icon-box"><i class="fa-solid fa-bowl-food"></i></div>
+                  <div class="log-icon-box">
+                    <i class="fa-solid fa-bowl-food"></i>
+                  </div>
                   <div class="log-details">
                     <div class="log-title">Morning feeding</div>
                     <div class="log-desc">200g dry food + water refilled</div>
@@ -178,7 +195,9 @@
 
                 <!-- Log item 2 -->
                 <div class="log-item-row weight">
-                  <div class="log-icon-box"><i class="fa-solid fa-weight-scale"></i></div>
+                  <div class="log-icon-box">
+                    <i class="fa-solid fa-weight-scale"></i>
+                  </div>
                   <div class="log-details">
                     <div class="log-title">Weight check</div>
                     <div class="log-desc">8.5 kg recorded</div>
@@ -191,7 +210,9 @@
 
                 <!-- Log item 3 -->
                 <div class="log-item-row vet">
-                  <div class="log-icon-box"><i class="fa-solid fa-hospital"></i></div>
+                  <div class="log-icon-box">
+                    <i class="fa-solid fa-hospital"></i>
+                  </div>
                   <div class="log-details">
                     <div class="log-title">Annual checkup</div>
                     <div class="log-desc">Dr. Santos - all clear</div>
@@ -207,5 +228,8 @@
         </div>
       </main>
     </div>
+    <script src="../js/admin/admin_data.js"></script>
+    <script src="../js/admin/admin_shared.js"></script>
+    <script src="../js/admin/edit_pet.js"></script>
   </body>
 </html>

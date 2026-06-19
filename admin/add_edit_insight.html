@@ -28,10 +28,14 @@
             <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
           </li>
           <li>
-            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="manage_articles.html"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
           </li>
           <li>
-            <a href="manage_insights.html" class="active"><i class="fa-solid fa-star"></i></a>
+            <a href="manage_insights.html" class="active"
+              ><i class="fa-solid fa-star"></i
+            ></a>
           </li>
         </ul>
         <div class="sidebar-bottom">
@@ -43,14 +47,18 @@
       <main class="admin-main">
         <header class="admin-header">
           <div class="header-title-container">
-            <a href="manage_insights.html" class="back-link">&larr; Back to Insights</a>
+            <a href="manage_insights.html" class="back-link"
+              >&larr; Back to Insights</a
+            >
             <div class="header-title">
               <h1>Add New Insight</h1>
               <p>Post a daily pet insight for all users</p>
             </div>
           </div>
           <div class="header-actions">
-            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-badge">
+              <i class="fa-solid fa-shield-halved"></i> Admin
+            </div>
             <div class="admin-profile-circle">AD</div>
           </div>
         </header>
@@ -67,34 +75,61 @@
                 <div class="form-field">
                   <label>Category *</label>
                   <div class="category-btn-group">
-                    <button type="button" class="category-btn active">
+                    <button
+                      type="button"
+                      class="category-btn active"
+                      data-category="dogs">
                       <span class="emoji-icon">🐶</span>
                       <span>Dogs</span>
                     </button>
-                    <button type="button" class="category-btn">
+                    <button
+                      type="button"
+                      class="category-btn"
+                      data-category="cats">
                       <span class="emoji-icon">🐱</span>
                       <span>Cats</span>
                     </button>
-                    <button type="button" class="category-btn">
+                    <button
+                      type="button"
+                      class="category-btn"
+                      data-category="general">
                       <span class="emoji-icon">🌿</span>
                       <span>General</span>
                     </button>
-                    <button type="button" class="category-btn">
+                    <button
+                      type="button"
+                      class="category-btn"
+                      data-category="ph-guide">
                       <span class="emoji-icon">🇵🇭</span>
                       <span>PH Guide</span>
                     </button>
                   </div>
+                  <input
+                    type="hidden"
+                    id="insight_category"
+                    name="category"
+                    value="dogs" />
                 </div>
 
                 <div class="form-grid-2">
                   <div class="form-field">
                     <label for="icon_emoji">Icon emoji *</label>
-                    <input type="text" id="icon_emoji" placeholder="e.g. 🐶 or 💊" required />
-                    <span class="form-field-helper">This shows as the insight icon.</span>
+                    <input
+                      type="text"
+                      id="icon_emoji"
+                      placeholder="e.g. 🐶 or 💊"
+                      required />
+                    <span class="form-field-helper"
+                      >This shows as the insight icon.</span
+                    >
                   </div>
                   <div class="form-field">
                     <label for="date_posted">Date to post *</label>
-                    <input type="text" id="date_posted" value="March 21, 2026" required />
+                    <input
+                      type="text"
+                      id="date_posted"
+                      value="March 21, 2026"
+                      required />
                   </div>
                 </div>
 
@@ -106,7 +141,9 @@
                     class="insight-text-area"
                     placeholder="Write a short did-you-know fact or helpful tip for pet owners in Laguna. Keep it brief and easy to read..."
                     required></textarea>
-                  <span class="form-field-helper">Keep it under 2 sentences. Short and easy to read.</span>
+                  <span class="form-field-helper"
+                    >Keep it under 2 sentences. Short and easy to read.</span
+                  >
                 </div>
               </div>
 
@@ -131,5 +168,8 @@
         </div>
       </main>
     </div>
+    <script src="../js/admin/admin_data.js"></script>
+    <script src="../js/admin/admin_shared.js"></script>
+    <script src="../js/admin/add_edit_insight.js"></script>
   </body>
 </html>

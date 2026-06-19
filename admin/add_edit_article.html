@@ -28,7 +28,9 @@
             <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
           </li>
           <li>
-            <a href="manage_articles.html" class="active"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="manage_articles.html" class="active"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
           </li>
           <li>
             <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
@@ -43,74 +45,85 @@
       <main class="admin-main">
         <header class="admin-header">
           <div class="header-title-container">
-            <a href="manage_articles.html" class="back-link">&larr; Back to Articles</a>
+            <a href="manage_articles.html" class="back-link"
+              >&larr; Back to Articles</a
+            >
             <div class="header-title">
               <h1>Add New Article</h1>
               <p>Create a new article or guide for Wagura</p>
             </div>
           </div>
           <div class="header-actions">
-            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-badge">
+              <i class="fa-solid fa-shield-halved"></i> Admin
+            </div>
             <div class="admin-profile-circle">AD</div>
           </div>
         </header>
 
         <!-- Edit Profile wrapper -->
-        <div class="split-form-layout">
+        <form
+          action="post_article_logic.php"
+          method="POST"
+          class="split-form-layout">
           <!-- Left side form contents -->
           <section class="admin-card left-form-panel">
-            <form action="post_article_logic.php" method="POST">
-              <!-- Article Details section -->
-              <div class="form-section">
-                <div class="form-section-title">Article Details</div>
+            <!-- Article Details section -->
+            <div class="form-section">
+              <div class="form-section-title">Article Details</div>
+              <div class="form-field">
+                <label for="title">Title *</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Enter article title..."
+                  required />
+              </div>
+              <div class="form-grid-2">
                 <div class="form-field">
-                  <label for="title">Title *</label>
+                  <label for="category">Category *</label>
+                  <select id="category" name="category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="ph-guide">PH Guide</option>
+                    <option value="dogs">Dogs</option>
+                    <option value="cats">Cats</option>
+                    <option value="general">General</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="breed">Breed</label>
                   <input
                     type="text"
-                    id="title"
-                    name="title"
-                    placeholder="Enter article title..."
-                    required />
-                </div>
-                <div class="form-grid-2">
-                  <div class="form-field">
-                    <label for="category">Category *</label>
-                    <select id="category" name="category" required>
-                      <option value="" disabled selected>Select category</option>
-                      <option value="ph-guide">PH Guide</option>
-                      <option value="dogs">Dogs</option>
-                      <option value="cats">Cats</option>
-                      <option value="general">General</option>
-                    </select>
-                  </div>
-                  <div class="form-field">
-                    <label for="breed">Breed</label>
-                    <input type="text" id="breed" name="breed" placeholder="e.g. Aspin, All breeds" />
-                  </div>
+                    id="breed"
+                    name="breed"
+                    placeholder="e.g. Aspin, All breeds" />
                 </div>
               </div>
+            </div>
 
-              <!-- Content section -->
-              <div class="form-section">
-                <div class="form-section-title">Content</div>
-                <div class="form-field">
-                  <label for="content">Article content *</label>
-                  <textarea
-                    id="content"
-                    name="content"
-                    class="textarea-field"
-                    placeholder="Write the full article content here. You can include tips, step-by-step guides, and PH-specific advice for pet owners in Laguna..."
-                    required></textarea>
-                  <span class="form-field-helper">Write clear and helpful content for Laguna pet owners.</span>
-                </div>
+            <!-- Content section -->
+            <div class="form-section">
+              <div class="form-section-title">Content</div>
+              <div class="form-field">
+                <label for="content">Article content *</label>
+                <textarea
+                  id="content"
+                  name="content"
+                  class="textarea-field"
+                  placeholder="Write the full article content here. You can include tips, step-by-step guides, and PH-specific advice for pet owners in Laguna..."
+                  required></textarea>
+                <span class="form-field-helper"
+                  >Write clear and helpful content for Laguna pet owners.</span
+                >
               </div>
+            </div>
 
-              <!-- Form actions -->
-              <div class="form-actions">
-                <a href="manage_articles.html" class="btn-secondary">Cancel</a>
-                <button type="submit" class="btn-primary">Publish article</button>
-              </div>
-            </form>
+            <!-- Form actions -->
+            <div class="form-actions">
+              <a href="manage_articles.html" class="btn-secondary">Cancel</a>
+              <button type="submit" class="btn-primary">Publish article</button>
+            </div>
           </section>
 
           <!-- Right side status control widgets -->
@@ -124,7 +137,11 @@
               </div>
               <div class="form-field" style="margin-bottom: 0">
                 <label for="icon_emoji">Icon emoji</label>
-                <input type="text" id="icon_emoji" placeholder="e.g. 🐶 or 💊" />
+                <input
+                  type="text"
+                  id="icon_emoji"
+                  name="icon_emoji"
+                  placeholder="e.g. 🐶 or 💊" />
               </div>
             </section>
 
@@ -133,11 +150,15 @@
               <div class="widget-card-title">Publishing</div>
               <div class="form-field">
                 <label for="read_time">Read time</label>
-                <input type="text" id="read_time" placeholder="3 min read" />
+                <input
+                  type="text"
+                  id="read_time"
+                  name="read_time"
+                  placeholder="3 min read" />
               </div>
               <div class="form-field" style="margin-bottom: 0">
                 <label for="status">Status</label>
-                <select id="status">
+                <select id="status" name="status">
                   <option value="published" selected>Published</option>
                   <option value="draft">Draft</option>
                 </select>
@@ -156,8 +177,11 @@
               <span class="form-field-helper">Select one category above</span>
             </section>
           </div>
-        </div>
+        </form>
       </main>
     </div>
+    <script src="../js/admin/admin_data.js"></script>
+    <script src="../js/admin/admin_shared.js"></script>
+    <script src="../js/admin/add_edit_article.js"></script>
   </body>
 </html>

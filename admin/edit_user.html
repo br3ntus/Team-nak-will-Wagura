@@ -22,13 +22,17 @@
             <a href="admin_dashboard.php"><i class="fa-solid fa-house"></i></a>
           </li>
           <li>
-            <a href="manage_users.html" class="active"><i class="fa-solid fa-users"></i></a>
+            <a href="manage_users.html" class="active"
+              ><i class="fa-solid fa-users"></i
+            ></a>
           </li>
           <li>
             <a href="manage_pets.html"><i class="fa-solid fa-paw"></i></a>
           </li>
           <li>
-            <a href="manage_articles.html"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="manage_articles.html"
+              ><i class="fa-solid fa-pen-to-square"></i
+            ></a>
           </li>
           <li>
             <a href="manage_insights.html"><i class="fa-solid fa-star"></i></a>
@@ -43,14 +47,18 @@
       <main class="admin-main">
         <header class="admin-header">
           <div class="header-title-container">
-            <a href="manage_users.html" class="back-link">&larr; Back to Users</a>
+            <a href="manage_users.html" class="back-link"
+              >&larr; Back to Users</a
+            >
             <div class="header-title">
               <h1>Edit User</h1>
               <p>Update user account details</p>
             </div>
           </div>
           <div class="header-actions">
-            <div class="admin-badge"><i class="fa-solid fa-shield-halved"></i> Admin</div>
+            <div class="admin-badge">
+              <i class="fa-solid fa-shield-halved"></i> Admin
+            </div>
             <div class="admin-profile-circle">AD</div>
           </div>
         </header>
@@ -123,7 +131,12 @@
                   </div>
                   <div class="form-field">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" value="brentaldhee" required />
+                    <input
+                      type="text"
+                      id="username"
+                      name="username"
+                      value="brentaldhee"
+                      required />
                   </div>
                   <div class="form-field">
                     <label for="status">Account status</label>
@@ -147,7 +160,9 @@
                       id="password"
                       name="password"
                       placeholder="Leave blank to keep current" />
-                    <span class="form-field-helper">Only fill this if you need to reset the password.</span>
+                    <span class="form-field-helper"
+                      >Only fill this if you need to reset the password.</span
+                    >
                   </div>
                   <div class="form-field">
                     <label for="confirm_password">Confirm new password</label>
@@ -166,13 +181,26 @@
                 <div class="form-grid-2">
                   <div class="form-field">
                     <label for="max_pets">Max pets allowed</label>
-                    <input type="text" id="max_pets" name="max_pets" value="5 pets (default)" />
-                    <span class="form-field-helper">Default limit is 5 per user.</span>
+                    <input
+                      type="text"
+                      id="max_pets"
+                      name="max_pets"
+                      value="5 pets (default)" />
+                    <span class="form-field-helper"
+                      >Default limit is 5 per user.</span
+                    >
                   </div>
                   <div class="form-field">
                     <label for="user_id">User ID</label>
-                    <input type="text" id="user_id" name="user_id" value="USR-0001" disabled />
-                    <span class="form-field-helper">Auto-generated. Cannot be changed.</span>
+                    <input
+                      type="text"
+                      id="user_id"
+                      name="user_id"
+                      value="USR-0001"
+                      disabled />
+                    <span class="form-field-helper"
+                      >Auto-generated. Cannot be changed.</span
+                    >
                   </div>
                 </div>
               </div>
@@ -187,5 +215,8 @@
         </div>
       </main>
     </div>
+    <script src="../js/admin/admin_data.js"></script>
+    <script src="../js/admin/admin_shared.js"></script>
+    <script src="../js/admin/edit_user.js"></script>
   </body>
 </html>
