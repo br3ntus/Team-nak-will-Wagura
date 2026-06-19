@@ -1,6 +1,6 @@
 <?php
 // We need to connect to the database first
-require_once "db_connection.php";
+require_once "db_connection_pdo.php";
 
 // We start a session so the server can remember who is logged in as they browse
 session_start();
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION["first_name"] = $user["first_name"];
 
       // And then we take them straight to their dashboard
-      header("Location: user/dashboard_page.html");
+      header("Location: user/dashboard_page.php");
       exit();
     } else {
       // If the password is wrong, we send them back to the login page with an error
