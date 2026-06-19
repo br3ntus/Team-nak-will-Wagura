@@ -1,11 +1,14 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (!isset($_SESSION['admin_id'])) {
     header("Location: admin_login.php");
     exit();
 }
 
-require_once "../db_connection_pdo.php";
+require_once __DIR__ . '/../db_connection_pdo.php';
 
 function getCount(PDO $conn, string $table): ?int {
     try {

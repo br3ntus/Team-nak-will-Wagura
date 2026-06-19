@@ -59,6 +59,30 @@ try {
         ];
     }
 }
+
+  // Get recent articles for dashboard
+  $articles = [];
+  try {
+    $stmtArticles = $conn->prepare("SELECT article_id, title, description, category_id, icon, created_at FROM articles ORDER BY created_at DESC LIMIT 4");
+    $stmtArticles->execute();
+    if ($stmtArticles instanceof PDOStatement) {
+      $articles = $stmtArticles->fetchAll(PDO::FETCH_ASSOC);
+    }
+  } catch (PDOException $e) {
+    $articles = [];
+  }
+
+  // Get recent insights for dashboard
+  $insights = [];
+  try {
+    $stmtInsights = $conn->prepare("SELECT insight_id, title, category_id, created_at FROM daily_insights ORDER BY created_at DESC LIMIT 3");
+    $stmtInsights->execute();
+    if ($stmtInsights instanceof PDOStatement) {
+      $insights = $stmtInsights->fetchAll(PDO::FETCH_ASSOC);
+    }
+  } catch (PDOException $e) {
+    $insights = [];
+  }
 ?>
 <!doctype html>
 <html lang="en">
@@ -84,10 +108,10 @@ try {
         <a href="../landing_page.html"><img src="../images/Wagura Logo 60x60.png" alt="Wagura" class="sidebar-logo"></a>
         <ul class="sidebar-links">
           <li><a href="dashboard_page.php" class="active"><i class="fa-solid fa-house"></i></a></li>
-          <li><a href="my_pet_page.html"><i class="fa-solid fa-user"></i></a></li>
-          <li><a href="articles_page.html"><i class="fa-solid fa-table-cells-large"></i></a></li>
-          <li><a href="daily_insights_page.html"><i class="fa-solid fa-star"></i></a></li>
-          <li><a href="health_log_page.html"><i class="fa-solid fa-clipboard-list"></i></a></li>
+          <li><a href="my_pet_page.php"><i class="fa-solid fa-user"></i></a></li>
+          <li><a href="articles_page.php"><i class="fa-solid fa-table-cells-large"></i></a></li>
+          <li><a href="daily_insights_page.php"><i class="fa-solid fa-star"></i></a></li>
+          <li><a href="health_log_page.php"><i class="fa-solid fa-clipboard-list"></i></a></li>
         </ul>
         <div class="sidebar-bottom" style="margin-top: auto; padding-top: 20px;">
           <a href="../logout.php" title="Logout" style="color: var(--text-muted); font-size: 18px; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -133,7 +157,7 @@ try {
               </div>
               <div class="pet-list">
                 <?php foreach ($user_pets as $pet): ?>
-                <a href="add_pet_page.html" class="pet-card">
+                <a href="my_pet_page.php" class="pet-card">
                   <div class="pet-avatar">
                     <i class="fa-solid <?php echo (isset($pet['type']) && strtolower($pet['type']) === 'cat') ? 'fa-cat' : 'fa-dog'; ?>"></i>
                   </div>
@@ -146,7 +170,7 @@ try {
                 </a>
                 <?php endforeach; ?>
                 <!-- ADD PET -->
-                <a href="add_pet_page.html" class="add-pet-btn">
+                <a href="add_pet_page.php" class="add-pet-btn">
                   <i class="fa-solid fa-plus"></i>
                   <span>Add a new pet (<?php echo max(0, 5 - (int)$pets_count); ?> slots remaining)</span>
                 </a>
@@ -158,34 +182,46 @@ try {
                 <h2>ARTICLES & GUIDES</h2>
               </div>
               <div class="articles-grid">
-                <div class="article-card">
-                  <div>
-                    <span class="article-tag ph">PH Guide</span>
-                    <h3>Protecting your dog from ticks in humid Laguna weather</h3>
+                <?php if (!empty($articles)): ?>
+                  <?php foreach ($articles as $article): ?>
+                    <a href="article_single_page.php?id=<?php echo $article['article_id']; ?>" class="article-card" data-category="<?php echo $article['category_id']; ?>">
+                      <div>
+                        <span class="article-tag"><?php echo htmlspecialchars($article['category_id'] ? 'PH Guide' : 'General'); ?></span>
+                        <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                      </div>
+                      <span class="article-meta"><?php echo htmlspecialchars(substr($article['created_at'], 0, 10)); ?> • <?php echo htmlspecialchars($article['description'] ?? ''); ?></span>
+                    </a>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <div class="article-card">
+                    <div>
+                      <span class="article-tag ph">PH Guide</span>
+                      <h3>Protecting your dog from ticks in humid Laguna weather</h3>
+                    </div>
+                    <span class="article-meta">General • 3 min read</span>
                   </div>
-                  <span class="article-meta">General • 3 min read</span>
-                </div>
-                <div class="article-card">
-                  <div>
-                    <span class="article-tag dogs">Dogs</span>
-                    <h3>Rabies prevention tips for Aspin owners near strays</h3>
+                  <div class="article-card">
+                    <div>
+                      <span class="article-tag dogs">Dogs</span>
+                      <h3>Rabies prevention tips for Aspin owners near strays</h3>
+                    </div>
+                    <span class="article-meta">Dogs • 4 min read</span>
                   </div>
-                  <span class="article-meta">Dogs • 4 min read</span>
-                </div>
-                <div class="article-card">
-                  <div>
-                    <span class="article-tag cats">Cats</span>
-                    <h3>Keeping your cat cool during hot season in Laguna</h3>
+                  <div class="article-card">
+                    <div>
+                      <span class="article-tag cats">Cats</span>
+                      <h3>Keeping your cat cool during hot season in Laguna</h3>
+                    </div>
+                    <span class="article-meta">Cats • 2 min read</span>
                   </div>
-                  <span class="article-meta">Cats • 2 min read</span>
-                </div>
-                <div class="article-card">
-                  <div>
-                    <span class="article-tag ph">PH Guide</span>
-                    <h3>What to do when your pet encounters a stray animal</h3>
+                  <div class="article-card">
+                    <div>
+                      <span class="article-tag ph">PH Guide</span>
+                      <h3>What to do when your pet encounters a stray animal</h3>
+                    </div>
+                    <span class="article-meta">General • 5 min read</span>
                   </div>
-                  <span class="article-meta">General • 5 min read</span>
-                </div>
+                <?php endif; ?>
               </div>
             </section>
           </div>
@@ -195,28 +231,37 @@ try {
             <section class="side-panel">
               <div class="panel-header">
                 <h2>Daily Pet Insights</h2>
-                <a href="daily_insights_page.html" class="see-all-link">See all</a>
+                <a href="daily_insights_page.php" class="see-all-link">See all</a>
               </div>
               <div class="insight-list">
-                <div class="insight-item">
-                  <i class="fa-solid fa-star"></i>
-                  <p><strong>Did you know?</strong> Cats sleep 12-16 hours a day to conserve energy.</p>
-                </div>
-                <div class="insight-item">
-                  <i class="fa-solid fa-star"></i>
-                  <p><strong>Tip for Aspins:</strong> Deworm every 3 months due to outdoor exposure.</p>
-                </div>
-                <div class="insight-item">
-                  <i class="fa-solid fa-star"></i>
-                  <p><strong>Laguna weather:</strong> High humidity can cause skin issues. Check weekly.</p>
-                </div>
+                <?php if (!empty($insights)): ?>
+                  <?php foreach ($insights as $ins): ?>
+                    <div class="insight-item">
+                      <i class="fa-solid fa-star"></i>
+                      <p><strong><?php echo htmlspecialchars($ins['title']); ?></strong></p>
+                    </div>
+                  <?php endforeach; ?>
+                <?php else: ?>
+                  <div class="insight-item">
+                    <i class="fa-solid fa-star"></i>
+                    <p><strong>Did you know?</strong> Cats sleep 12-16 hours a day to conserve energy.</p>
+                  </div>
+                  <div class="insight-item">
+                    <i class="fa-solid fa-star"></i>
+                    <p><strong>Tip for Aspins:</strong> Deworm every 3 months due to outdoor exposure.</p>
+                  </div>
+                  <div class="insight-item">
+                    <i class="fa-solid fa-star"></i>
+                    <p><strong>Laguna weather:</strong> High humidity can cause skin issues. Check weekly.</p>
+                  </div>
+                <?php endif; ?>
               </div>
             </section>
 
             <section class="side-panel">
               <div class="panel-header">
                 <h2>Recent Health Logs</h2>
-                <a href="add_log_page.html" class="see-all-link">Log new</a>
+                <a href="health_log_page.php" class="see-all-link">See all</a>
               </div>
               <div class="log-list">
                 <?php foreach ($recent_logs as $log): ?>
@@ -230,7 +275,7 @@ try {
                 </div>
                 <?php endforeach; ?>
               </div>
-              <a href="add_log_page.html" class="log-action-btn">+ Log health entry</a>
+              <a href="add_log_page.php" class="log-action-btn">+ Log health entry</a>
             </section>
           </div>
         </div>

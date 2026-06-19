@@ -60,9 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 
                 if ($isAdmin) {
-                    $_SESSION['admin_id'] = $user['user_id'] ?? $user['id'] ?? 1;
+                    $_SESSION['admin_id'] = $user['admin_id'] ?? $user['user_id'] ?? $user['id'] ?? 1;
                     $_SESSION['admin_email'] = (string)($user['email'] ?? '');
-                    $_SESSION['admin_name'] = ($user['first_name'] ?? 'Admin') . ' ' . ($user['last_name'] ?? '');
+                    $_SESSION['admin_name'] = ($user['first_name'] ?? $user['name'] ?? 'Admin') . ' ' . ($user['last_name'] ?? '');
                     
                     header("Location: admin_dashboard.php");
                     exit();
