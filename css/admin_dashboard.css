@@ -122,3 +122,192 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* BI Visual Analytics Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.chart-subtitle {
+  font-size: 11px;
+  color: #7f8ea0;
+  margin-top: -8px;
+}
+
+/* Bar Chart styles */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  height: 120px;
+  padding-bottom: 4px;
+  margin-top: 10px;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.bar {
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  min-height: 2px;
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  font-size: 9px;
+  color: #7f8ea0;
+  text-align: center;
+}
+
+.bar-value {
+  font-size: 10px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Pie Chart styles */
+.pie-area {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.pie-svg {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  color: #7f8ea0;
+}
+
+.legend-value {
+  color: #ffffff;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* BI prediction Section */
+.bi-section {
+  background: #2e4057;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bi-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bi-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: 10px;
+  color: #c9a84c;
+}
+
+.bi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.bi-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bi-card-label {
+  font-size: 10px;
+  color: #7f8ea0;
+}
+
+.bi-card-value {
+  font-size: 18px;
+  font-weight: 500;
+  color: #c9a84c;
+}
+
+.bi-card-sub {
+  font-size: 10px;
+  color: #7f8ea0;
+}
+
+.bi-insight {
+  background: rgba(201, 168, 76, 0.06);
+  border-left: 3px solid #c9a84c;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #a4b3c6;
+  line-height: 1.6;
+}
+
+.bi-insight strong {
+  color: #c9a84c;
+}
+

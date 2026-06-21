@@ -192,6 +192,9 @@
 
   const UserData = {
     load() {
+      if (window.WaguraBackendData) {
+        return window.WaguraBackendData;
+      }
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         try {
@@ -205,6 +208,10 @@
     },
 
     save(data) {
+      if (window.WaguraBackendData) {
+        window.WaguraBackendData = data;
+        return;
+      }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     },
 
@@ -327,6 +334,17 @@
       mock.pets = mock.pets.filter((pet) => pet.id !== id);
       mock.logs = mock.logs.filter((log) => log.petId !== id);
       this.mock = mock;
+
+      // In backend mode, notify database asynchronously
+      if (window.WaguraBackendData) {
+        fetch(`delete_pet.php?pet_code=${id}`, { method: 'POST' })
+          .then(res => res.json())
+          .then(data => {
+            if (!data.success) {
+              console.error("Failed to delete pet from database:", data.error);
+            }
+          });
+      }
     },
   };
 

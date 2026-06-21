@@ -1,6 +1,16 @@
 <?php
+/**
+ * Logout Controller
+ * 
+ * Clears the user session and redirects back to the login page.
+ */
+
 session_start();
-$_SESSION = array();
+
+// Unset all session variables
+$_SESSION = [];
+
+// Destroy session cookie if set
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(session_name(), '', time() - 42000,
@@ -8,7 +18,10 @@ if (ini_get("session.use_cookies")) {
         $params["secure"], $params["httponly"]
     );
 }
+
+// Destroy session
 session_destroy();
-header("Location: login_page.html");
+
+// Redirect to login page
+header("Location: login_page.php");
 exit();
-?>

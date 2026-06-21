@@ -1,0 +1,166 @@
+<?php
+/**
+ * User Login Page
+ * 
+ * Shows login form. Redirects to dashboard if already logged in.
+ * Handled by login.php for DB verification.
+ */
+session_start();
+
+// If already logged in, skip login page
+if (isset($_SESSION['user_id'])) {
+    header("Location: user/dashboard_page.html");
+    exit();
+}
+
+$remembered_username = $_COOKIE['wagura_username'] ?? '';
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wagura Login</title>
+    <link rel="stylesheet" href="template.css" />
+    <link rel="stylesheet" href="css/login_page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="js/login_page.js" defer></script>
+  </head>
+  <body>
+    <!-- Navigation bar at the top -->
+    <div class="navbar">
+      <div class="nav-left">
+        <img src="images/Wagura Logo 60x60.png" alt="Wagura Logo" />
+        <span class="logo-text">Wagura</span>
+      </div>
+
+      <div class="nav-right">
+        <a href="landing_page.html">← Back to home</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <!-- The left side explains why people should use the app -->
+        <div class="left">
+          <div class="subcontent-top">Welcome back</div>
+          <div class="header">
+            <h1>Your pets are waiting for <span>you</span></h1>
+          </div>
+          <div class="content">
+            <p>
+              Log in to track your pet's health, read local guides, and stay
+              updated with daily pet insights.
+            </p>
+          </div>
+
+          <ul class="features">
+            <li>
+              <div class="icon-box blue-bg">
+                <i class="fa-solid fa-paw"></i>
+              </div>
+              <span>Enroll up to 5 pets with unique IDs</span>
+            </li>
+            <li>
+              <div class="icon-box white-bg">
+                <i class="fa-solid fa-notes-medical"></i>
+              </div>
+              <span>Log health entries for each pet</span>
+            </li>
+            <li>
+              <div class="icon-box gold-bg">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <span>Daily pet insights on every login</span>
+            </li>
+            <li>
+              <div class="icon-box red-bg">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <span>Access PH-specific guides anytime</span>
+            </li>
+          </ul>
+
+          <div class="left-footer">
+            Made for pet owners in Laguna, Philippines
+          </div>
+        </div>
+
+        <!-- The right side is where the actual login happens -->
+        <div class="right">
+          <h2>Log in to Wagura</h2>
+          <p class="sub">Enter your credentials to access your account</p>
+
+          <?php if (isset($_GET['signup']) && $_GET['signup'] === 'success'): ?>
+            <div style="background: #ecfdf5; border-left: 4px solid #10b981; color: #065f46; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 14px;">
+              Account created successfully! You can now log in.
+            </div>
+          <?php endif; ?>
+
+          <?php if (isset($_GET['error'])): ?>
+            <div style="background: #fee2e2; border-left: 4px solid #ef4444; color: #991b1b; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 14px;">
+              <?php
+                switch ($_GET['error']) {
+                  case 'empty_fields':
+                    echo "Please fill in all fields.";
+                    break;
+                  case 'invalid_credentials':
+                    echo "Invalid username or password. Please try again.";
+                    break;
+                  case 'database_error':
+                    echo "A database error occurred. Please try again later.";
+                    break;
+                  default:
+                    echo "An unknown error occurred. Please try again.";
+                }
+              ?>
+            </div>
+          <?php endif; ?>
+
+          <form id="login-form" action="login.php" method="POST">
+            <label for="username">Username or Email</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username or email"
+              value="<?php echo htmlspecialchars($remembered_username); ?>"
+              required />
+
+            <label for="password">Password</label>
+            <!-- We use a container here to keep the eye icon inside the input box -->
+            <div class="password-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required />
+              <i class="fa-solid fa-eye toggle-password" id="toggleLoginPassword"></i>
+            </div>
+
+            <div class="form-options">
+              <div class="checkbox-group">
+                <input type="checkbox" id="remember" name="remember" <?php echo $remembered_username ? 'checked' : ''; ?> />
+                <label for="remember" style="margin-bottom: 0"
+                  >Remember me</label
+                >
+              </div>
+              <a href="#" class="forgot-link">Forgot password?</a>
+            </div>
+
+            <button type="submit" id="submit-btn">Log in</button>
+          </form>
+
+          <div class="divider">or</div>
+
+          <p class="signup-prompt">
+            Don't have an account?
+            <a href="register_page.php">Sign up for free</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

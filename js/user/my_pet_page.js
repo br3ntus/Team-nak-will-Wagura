@@ -15,10 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const capacity = UserData.getProfile().petCapacity || 5;
 
   function buildPetCard(pet) {
+    const thumbContent = pet.photo 
+      ? `<img src="${pet.photo}" alt="${pet.name}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />`
+      : `<i class="fa-solid fa-${pet.type.toLowerCase() === "cat" ? "cat" : "dog"}"></i>`;
+
     return `
       <div class="pet-card" data-id="${pet.id}">
         <div class="pet-top-info">
-          <div class="pet-thumb"><i class="fa-solid fa-${pet.type.toLowerCase() === "cat" ? "cat" : "dog"}"></i></div>
+          <div class="pet-thumb">${thumbContent}</div>
           <div class="pet-meta">
             <h3>${pet.name}</h3>
             <p>${pet.breed} • ${pet.type}</p>
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="card-actions">
           <a href="#" class="action-btn logs"><i class="fa-solid fa-eye"></i> View logs</a>
-          <a href="add_pet_page.html" class="action-btn"><i class="fa-solid fa-pen"></i> Edit</a>
+          <a href="edit_pet_page.php?pet_code=${encodeURIComponent(pet.id)}" class="action-btn"><i class="fa-solid fa-pen"></i> Edit</a>
           <a href="#" class="action-btn delete"><i class="fa-solid fa-trash"></i> Delete</a>
         </div>
       </div>
@@ -84,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
     petsGrid.innerHTML =
       pets.map(buildPetCard).join("") +
       `
-      <a href="add_pet_page.html" class="empty-slot-card">
+      <a href="add_pet_page.php" class="empty-slot-card">
         <i class="fa-solid fa-plus"></i>
         <span>Enroll a new pet</span>
         <p>${Math.max(capacity - pets.length, 0)} slots remaining</p>
@@ -121,6 +125,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function deletePet(petId) {
     if (!confirm("Are you sure you want to delete this pet?")) return;
+
+    // If backend is active, delete from database first, then re-render
+    if (window.WaguraBackendData) {
+      fetch(`/user/delete_pet.php?pet_code=${encodeURIComponent(petId)}`, { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            // Remove pet from in-memory data and re-render
+            UserData.mock.pets = UserData.mock.pets.filter(p => p.id !== petId);
+            pets = UserData.getPets();
+            renderFilters();
+            renderSlots();
+            renderPetList();
+          } else {
+            alert("Could not delete pet: " + (data.error || "Unknown error."));
+          }
+        })
+        .catch(err => {
+          console.error("Delete failed:", err);
+          alert("Network error. Could not delete pet.");
+        });
+      return;
+    }
+
+    // Fallback: localStorage mock
     UserData.removePet(petId);
     pets = UserData.getPets();
     renderFilters();

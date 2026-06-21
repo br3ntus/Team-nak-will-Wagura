@@ -1,15 +1,32 @@
 <?php
-  // Here's where we set up the database info so PHP knows where to look
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "wagura_db";
+/**
+ * Database Connection Config File
+ * 
+ * Uses PDO (PHP Data Objects) for secure, prepared SQL execution.
+ * Standard credentials for local XAMPP environment.
+ */
 
-  // This part actually tries to open the door to the database
-  $conn = new mysqli($servername, $username, $password, $dbname);
+// Connection parameters
+$host = 'localhost';
+$db   = 'wagura_db';
+$user = 'root';
+$pass = ''; // Default empty password for XAMPP root
+$charset = 'utf8mb4';
 
-  // If the door is locked or broken, this stops everything and tells us why
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-?>
+// Data Source Name (DSN)
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+
+// Connection options
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Throw exceptions on error
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // Fetch associative array by default
+    PDO::ATTR_EMULATE_PREPARES   => false,                  // Use real prepared statements
+];
+
+try {
+    // Instantiate PDO connection
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (\PDOException $e) {
+    // If connection fails, output error and halt
+    die("Database connection failed: " . $e->getMessage());
+}

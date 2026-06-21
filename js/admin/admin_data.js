@@ -171,6 +171,9 @@
 
     // Loads admin data from localStorage, or uses initial data if not found
     load() {
+      if (window.WaguraAdminBackendData) {
+        return window.WaguraAdminBackendData;
+      }
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         try {
@@ -185,6 +188,10 @@
 
     // Saves data to localStorage as JSON string
     save(data) {
+      if (window.WaguraAdminBackendData) {
+        window.WaguraAdminBackendData = data;
+        return;
+      }
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
     },
 
