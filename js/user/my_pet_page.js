@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // If backend is active, delete from database first, then re-render
     if (window.WaguraBackendData) {
-      fetch(`/user/delete_pet.php?pet_code=${encodeURIComponent(petId)}`, { method: 'POST' })
+      fetch(`delete_pet.php?pet_code=${encodeURIComponent(petId)}`, { method: 'POST' })
         .then(res => res.json())
         .then(data => {
           if (data.success) {
