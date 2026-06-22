@@ -150,4 +150,3 @@ If the Python API is unavailable, `admin/admin_dashboard.php` performs the same 
 
 - The project is designed around a hybrid architecture: PHP/MySQL for backend persistence and Python for BI analytics.
 - The admin dashboard is the main BI interface, showing both analytics cards and trend visualization.
-- This README now reflects the current proposal goals, completed features, and the Business Intelligence implementation.
