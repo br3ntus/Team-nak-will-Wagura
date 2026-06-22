@@ -1,151 +1,153 @@
 # Wagura
 
-A pet health tracking app for the Philippines. This is a frontend-only prototype, so everything runs in your browser without a backend server.
+Wagura is a pet health management system for dog and cat owners in Laguna, Philippines. It was designed as a Web Development project with a connected Business Intelligence component.
 
-## What is this?
+## About the webpage
 
-Wagura lets users log their pet's health, read articles about pet care, and track daily insights. There's also an admin section to manage articles, insights, and user data.
+The project follows the approved proposal structure:
 
-Right now, all the data is stored in your browser using localStorage. That means you can use the app, add pets, save health logs, and everything sticks around even after you refresh the page. But if you clear your browser data, the mock data will reset.
+- A **User panel** for pet owners to register, log in, enroll pets, and manage pet health data.
+- An **Admin panel** for platform administrators to manage users, pets, articles, and daily insights.
+- A **public section** with guides and tips for local pet care concerns such as rabies prevention, humid climate health, and stray animal awareness.
+- A **dashboard-driven** workflow that supports decision-making through summary statistics, visualization, and analytics.
 
-## How to use it
+The feature set is based on the initial proposal:
 
-1. Open `landing_page.html` in your browser
-2. Log in (use any email/password for the mock login)
-3. You'll see the user dashboard with your pets
-4. Add a new pet, log health info, read articles, or check daily insights
+- User authentication (registration and login)
+- Pet enrollment and management
+- Health log creation for feeding, weight, symptoms, and vet visits
+- PH-specific pet care articles and daily insight posts
+- Search and filter support for articles and insights
+- Admin content management and user oversight
+- Integration with XAMPP/PHP/MySQL for real backend data storage
 
-For the admin panel, open `admin/admin_login_page.html` instead.
+## What is already implemented
 
-## The two main parts
+### User functionality
 
-### User section
+- Register and log in through `register_page.php` and `login.php`
+- View the dashboard at `user/dashboard_page.php`
+- Add and edit pets using `user/add_pet_page.php` and `user/edit_pet_page.php`
+- Log health entries through `user/add_log_page.php`
+- Read articles on `user/articles_page.html`
+- Browse daily insights on `user/daily_insights_page.html`
+- View each pet's profile and health history on `user/my_pet_page.php`
 
-This is where regular users manage their pets. You can:
+### Admin functionality
 
-- Add and view pets
-- Log health information (feeding, weight, vet visits, symptoms)
-- Read articles about pet care
-- Check daily insights
+- Admin login via `admin/admin_login_page.php`
+- Admin dashboard at `admin/admin_dashboard.php`
+- Manage users with `admin/manage_users.html`
+- Manage pets with `admin/manage_pets.html`
+- Create and manage articles with `admin/manage_articles.html` and `admin/add_edit_article.html`
+- Create and manage daily insights with `admin/manage_insights.html` and `admin/add_edit_insight.html`
+- Dashboard overview cards for registered users, enrolled pets, article count, and insight count
+- Recent activity tables for users and pets
 
-All pet data is stored locally using the `UserData` object from `js/user/user_data.js`.
+### Data architecture
 
-### Admin section
+- Core backend is built in **PHP** and targets **MySQL** via XAMPP
+- Admin dashboard pulls real database data into frontend JS through `window.WaguraAdminBackendData`
+- Some pages use client-side scripting for interactive page behavior, while others rely on the PHP backend for persistence
+- `predict_api.py` provides a separate Business Intelligence prediction API in Python
 
-Admins can:
+## Business Intelligence implementation
 
-- Manage articles (create, view, delete)
-- Manage insights (create, view, delete)
-- View and manage user data
-- View and manage all pets
+This project implements the Business Intelligence with an integrated admin dashboard and a Python Linear Regression API.
 
-Admin data is stored locally using the `AdminData` object from `js/admin/admin_data.js`.
+### BI requirement coverage
 
-## How the data works
+The final BI requirement specifies:
 
-Both the user and admin sections use a simple frontend mock data system. Here's what happens:
+1. A working web-based dashboard integrated into the web system
+2. At least one BI technique from class
+3. Clear data visualization and insights
 
-1. When you first load the app, it checks localStorage for existing data
-2. If there's no data yet, it uses the initial mock data (default pets, articles, etc.)
-3. When you add or delete something, it saves to localStorage automatically
-4. Next time you open the page, your changes are still there
+Wagura currently uses **Linear Regression** as the primary BI technique.
 
-This means you can use the app like a real app, but there's no server involved. It's all in your browser.
+### Admin Dashboard BI section
 
-## Where are the files?
+The admin dashboard includes a BI panel that shows:
 
+- Predicted future pet weight
+- Weekly weight growth rate
+- Model accuracy as **R²**
+- Insight text summarizing pet trend predictions
+- A visual trend line of actual weight logs and predicted future weight
+
+The BI section is implemented in `admin/admin_dashboard.php` and includes a responsive dashboard card layout.
+
+### Python API: `predict_api.py`
+
+A zero-dependency Python API server is available at:
+
+- `http://127.0.0.1:5000/api/predict`
+
+The API accepts a JSON payload like:
+
+```json
+{
+  "pet_name": "Coco",
+  "breed": "Aspin Dog",
+  "days": 31,
+  "logs": [
+    { "date": "2026-03-01", "weight": 7.2 },
+    { "date": "2026-03-10", "weight": 7.8 },
+    { "date": "2026-03-20", "weight": 8.1 }
+  ]
+}
 ```
-js/
-  admin/
-    admin_data.js        - Stores and manages admin data
-    admin_shared.js      - Shared behaviors for all admin pages
-    add_edit_article.js  - Handles article creation
-    add_edit_insight.js  - Handles insight creation
-    manage_articles.js   - Shows and manages articles list
-    manage_insights.js   - Shows and manages insights list
-  user/
-    user_data.js         - Stores and manages user data
-    add_pet_page.js      - Handles pet creation
-    (other user page scripts)
 
-admin/
-  admin_dashboard.html
-  admin_login_page.html
-  add_edit_article.html
-  add_edit_insight.html
-  manage_articles.html
-  manage_insights.html
-  (other admin pages)
+And returns:
 
-user/
-  dashboard_page.html
-  add_pet_page.html
-  my_pet_page.html
-  health_log_page.html
-  articles_page.html
-  daily_insights_page.html
-  (other user pages)
+- `predicted_weight`
+- `prediction_date`
+- `growth_rate_weekly`
+- `r_squared`
+- `insight_text`
+- `actual_data`
 
-css/
-  (styling for all pages)
-```
+### Linear Regression details
 
-## The key JavaScript files
+The prediction engine calculates a least-squares linear regression from weight log dates to weight values. It returns:
 
-### `js/admin/admin_data.js`
+- slope `m`
+- intercept `b`
+- coefficient of determination `R²`
 
-This is the data layer for the admin side. It handles:
+This enables the dashboard to present both predictions and confidence insights, aligning with the BI requirement for statistical analysis.
 
-- Loading and saving data from localStorage
-- Getting lists of users, pets, articles, insights
-- Adding new articles and insights
-- Deleting items
-- Generating unique IDs
+### Fallback behavior
 
-### `js/user/user_data.js`
+If the Python API is unavailable, `admin/admin_dashboard.php` performs the same linear regression logic in PHP as a fallback and still generates a BI result.
 
-Same idea but for users. It manages:
+## How to run the project
 
-- Profile info
-- Pet data
-- Health logs
-- Articles and insights that users see
+1. Place the project folder under XAMPP's `htdocs`
+2. Start Apache and MySQL
+3. Start the Python API server with:
+   ```bash
+   python predict_api.py
+   ```
+4. Open the app in your browser at:
+   - `http://localhost/Team-nak-will-Wagura/login.php` for users
+   - `http://localhost/Team-nak-will-Wagura/admin/admin_login_page.php` for admin
 
-### `js/admin/admin_shared.js`
+> If the Python API is not running, the admin dashboard still shows predictions using the PHP fallback model.
 
-Shared behaviors for admin pages:
+## Project structure highlights
 
-- Search and filter functionality
-- Delete confirmations
-- Category button syncing
-- Live previews
+- `admin/` — admin pages and dashboard entry points
+- `user/` — user-facing pages for dashboard, pets, logs, articles, insights
+- `js/admin/` — admin page scripts and dashboard UI helpers
+- `js/user/` — user page scripts and local page state management
+- `css/` — shared and page-specific styling
+- `predict_api.py` — Python BI prediction API
+- `database/` (if present) — database schema and SQL support files
+- `reference/` — project proposal, BI requirement, and admin dashboard design references
 
-### Page-specific scripts
+## Notes
 
-Each page has its own script that handles form validation, saving data, and updating the UI. For example:
-
-- `add_edit_article.js` validates the article form and saves to AdminData
-- `add_pet_page.js` validates pet info and saves to UserData
-
-## Testing it out
-
-1. **Add a pet**: Go to the user dashboard and create a new pet. It saves automatically.
-2. **Log health info**: Record feeding, weight, vet visits, anything you want.
-3. **Create an article**: Go to admin > Manage Articles > New Article. Fill it out and click Publish.
-4. **Delete something**: Click a delete button and confirm. It removes from the list and storage.
-5. **Refresh the page**: Everything you added is still there. That's localStorage working.
-
-## Important to know
-
-- This is a prototype. Everything's frontend-only with fake data.
-- There's no real login. Any email/password combo works.
-- Data lives in your browser. Clearing browser data will reset everything.
-- Search filters work on the page, not a database.
-- No validation beyond basic field checks.
-
-## Tech stack
-
-- HTML, CSS, vanilla JavaScript
-- No frameworks or libraries (except Font Awesome icons)
-- localStorage for data persistence
-- DOM manipulation for all interactions
+- The project is designed around a hybrid architecture: PHP/MySQL for backend persistence and Python for BI analytics.
+- The admin dashboard is the main BI interface, showing both analytics cards and trend visualization.
+- This README now reflects the current proposal goals, completed features, and the Business Intelligence implementation.

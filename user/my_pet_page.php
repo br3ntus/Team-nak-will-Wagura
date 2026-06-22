@@ -156,14 +156,6 @@ try {
               ><i class="fa-solid fa-clipboard-list"></i
             ></a>
           </li>
-          <li>
-            <a
-              href="../register_page.php"
-              class="temp-register-link"
-              title="Back to register"
-              ><i class="fa-solid fa-user-plus"></i
-            ></a>
-          </li>
         </ul>
       </aside>
 
